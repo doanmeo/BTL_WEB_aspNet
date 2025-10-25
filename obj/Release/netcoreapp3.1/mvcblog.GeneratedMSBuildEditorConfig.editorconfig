@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = mvcblog
+build_property.ProjectDir = C:\Users\ad\Downloads\learn-cs-netcore-ex068-binding-validation\learn-cs-netcore-ex068-binding-validation\ASP_NET_CORE\mvcblog\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
