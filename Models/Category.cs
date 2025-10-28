@@ -1,48 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using BlogWebsite.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BlogWebsite.Models
+namespace BlogWebsite.Models // <-- Đảm bảo namespace này khớp với dự án của bạn
 {
-   [ Table("Category")]
-  public class Category
+    public class Category
     {
+        [Key] // Báo cho EF Core đây là khóa chính
+        public int CategoryId { get; set; }
 
-        [Key]
-        public int Id { get; set; }
+        [Required(ErrorMessage = "Tên chuyên mục là bắt buộc")]
+        [StringLength(100)]
+        public string Name { get; set; } // Lỗi của bạn là do thiếu thuộc tính này
 
-        // Category cha (FKey)
-        [Display(Name = "Danh mục cha")]
-        public int? ParentCategoryId { get; set; }
+        [StringLength(255)]
+        public string Description { get; set; }
 
-        // Tiều đề Category
-        [Required(ErrorMessage = "Phải có tên danh mục")]
-        [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} dài {1} đến {2}")]
-        [Display(Name = "Tên danh mục")]
-        public string Title { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
-        // Nội dung, thông tin chi tiết về Category
-        [DataType(DataType.Text)]
-        [Display(Name = "Nội dung danh mục")]
-        public string Description { set; get; }
-
-        //chuỗi Url
-        [Required(ErrorMessage = "Phải tạo url")]
-        [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} dài {1} đến {2}")]
-        [RegularExpression(@"^[a-z0-9-]*$", ErrorMessage = "Chỉ dùng các ký tự [a-z0-9-]")]
-        [Display(Name = "Url hiện thị")]
-        public string Slug { set; get; }
-
-        // Các Category con
-        [ValidateNever]
-        public ICollection<Category> CategoryChildren { get; set; }
-        //category cha
-
-        [ForeignKey("ParentCategoryId")]
-        [Display(Name = "Danh mục cha")]
-
-        [ValidateNever]
-        public Category ParentCategory { set; get; }
-
+        // Khai báo mối quan hệ: Một Category có nhiều Forum
+        public virtual ICollection<Forum> Forums { get; set; }
     }
 }

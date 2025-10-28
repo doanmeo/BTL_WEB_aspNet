@@ -17,69 +17,41 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogWebsite
 build_property.RootNamespace = BlogWebsite
-build_property.ProjectDir = D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\
+build_property.ProjectDir = C:\Users\PC\source\repos\BTL_WEB_aspNet\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite
+build_property.MSBuildProjectDirectory = C:\Users\PC\source\repos\BTL_WEB_aspNet
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/Categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/Categories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/Categories/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/Categories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Areas/Admin/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/Home/Index.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/Home/Privacy.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/Shared/Error.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/_ViewImports.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/_ViewStart.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/NetCore_MVC/NetCore-web-mvc-/BlogWebsite/Views/Shared/_Layout.cshtml]
+[C:/Users/PC/source/repos/BTL_WEB_aspNet/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o3w0s43aou
