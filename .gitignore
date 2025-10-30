@@ -1,0 +1,16 @@
+# Build folders
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.exe
+*.pdb
+*.cache
+*.db
+*.bak
+*.log
+
+# Other temp files
+Thumbs.db
+Desktop.ini

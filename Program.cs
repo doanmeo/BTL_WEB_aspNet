@@ -1,14 +1,23 @@
-﻿using BlogWebsite.Data;
+﻿using Microsoft.AspNetCore.Identity;
+using BlogWebsite.Models;
 using Microsoft.EntityFrameworkCore;
+using BlogWebsite.Models; // Đảm bảo using đúng
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Lấy chuỗi kết nối từ appsettings.json
-var connectionString = builder.Configuration.GetConnectionString("MyBlogContext");
 
-// 2. Đăng ký AppDbContext với SQL Server (hoặc CSDL bạn dùng)
-builder.Services.AddDbContext<BlogWebsite.Data.AppDbContext>(options =>
-    options.UseSqlServer(connectionString)); // <-- Hoặc UseMySql, UseSqlite, v.v.
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+// 2. ĐĂNG KÝ DBCONTEXT
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// 3. ĐĂNG KÝ IDENTITY (Rất quan trọng)
+builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
