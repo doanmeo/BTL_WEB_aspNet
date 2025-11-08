@@ -22,6 +22,6 @@ namespace BlogWebsite.Models
         public DateTime JoinedAt { get; set; }
 
         // Khai báo mối quan hệ
-        public virtual AppUser AppUser { get; set; }
+        public virtual AppUser User { get; set; }
     }
 }

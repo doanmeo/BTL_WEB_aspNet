@@ -1,0 +1,75 @@
+﻿@using BlogWebsite.Models
+@model IEnumerable<BlogWebsite.Models.Report>
+
+@{
+    ViewData["Title"] = "Reports Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reports Management</h1>
+<p>List of user-submitted reports.</p>
+
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Reported Post</th>
+            <th>Reason</th>
+            <th>Reported By</th>
+            <th>Created At</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Post != null)
+                    {
+                        <a asp-controller="Thread" asp-action="Details" asp-route-id="@item.Post.ThreadId" target="_blank">
+                            @(item.Post.Content.Length > 50 ? item.Post.Content.Substring(0, 50) + "..." : item.Post.Content)
+                        </a>
+                    }
+                    else
+                    {
+                        <span>(Post not available)</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Reason)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppUser.UserName)
+                </td>
+                <td>@item.CreatedAt.ToString("g")</td>
+                <td>
+                    @if (item.Status == ReportStatus.Pending)
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                    // SỬA LỖI: Đổi Processed thành Handled
+                    else if (item.Status == ReportStatus.Handled)
+                    {
+                        <span class="badge bg-success">Handled</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Ignored</span>
+                    }
+                </td>
+                <td>
+                    @if (item.Status == ReportStatus.Pending)
+                    {
+                        <form asp-area="Admin" asp-controller="Report" asp-action="Process" asp-route-id="@item.ReportId" method="post" style="display:inline;">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Are you sure? This will delete the post.');">Process</button>
+                        </form>
+                        <form asp-area="Admin" asp-controller="Report" asp-action="Ignore" asp-route-id="@item.ReportId" method="post" style="display:inline;">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-secondary btn-sm">Ignore</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

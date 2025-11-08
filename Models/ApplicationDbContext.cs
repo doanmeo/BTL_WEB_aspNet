@@ -27,7 +27,7 @@ namespace BlogWebsite.Models
             // Cấu hình liên kết 1-1 cho AppUser và UserProfile
             builder.Entity<AppUser>()
                 .HasOne(a => a.UserProfile)
-                .WithOne(u => u.AppUser)
+                .WithOne(u => u.User)
                 .HasForeignKey<UserProfile>(u => u.UserId);
 
             // Cấu hình ràng buộc UNIQUE cho Bảng Like

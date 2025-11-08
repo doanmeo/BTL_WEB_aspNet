@@ -1,0 +1,114 @@
+﻿@model BlogWebsite.Models.Thread
+@using BlogWebsite.Models
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
+
+@{
+    ViewData["Title"] = Model.Title;
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Forum" asp-action="Details" asp-route-id="@Model.ForumId">@Model.Forum.Name</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <h2 class="mb-3">@Model.Title</h2>
+    <p class="text-muted">Views: @Model.ViewCount</p>
+
+    <hr />
+
+    @if (Model.Posts != null && Model.Posts.Any())
+    {
+        @foreach (var post in Model.Posts)
+        {
+            <div class="card mb-3 post-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 text-center border-right">
+                            @* Thông tin người dùng bên trái *@
+                            <img src="@(string.IsNullOrEmpty(post.AppUser.UserProfile?.AvatarUrl) ? "/images/default-avatar.png" : post.AppUser.UserProfile.AvatarUrl)"
+                                 alt="Avatar" class="img-thumbnail rounded-circle mb-2" style="width: 80px; height: 80px; object-fit: cover;" />
+                            <h5 class="mb-0"><a asp-controller="UserProfiles" asp-action="Details" asp-route-id="@post.AppUserId">@post.AppUser.UserName</a></h5>
+                            <small class="text-muted">Joined: @(post.AppUser.UserProfile?.JoinedAt.ToShortDateString() ?? "N/A")</small><br />
+                            <small class="text-muted">Posts: @* TODO: Số lượng bài viết *@</small><br />
+                            <small class="text-muted">Reputation: @(post.AppUser.UserProfile?.Reputation ?? 0)</small>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Posted: @post.CreatedAt.ToString("g")</small>
+                                <div>
+                                    @* Nút Like - Người 3 sẽ triển khai AJAX *@
+                                    <button class="btn btn-sm btn-outline-primary like-button" data-post-id="@post.PostId">
+                                        <i class="bi bi-heart"></i> Like (<span class="like-count">0</span>)
+                                    </button>
+                                    @* Nút Report - Người 3 sẽ triển khai Modal/AJAX *@
+                                    @if (User.Identity.IsAuthenticated && post.AppUserId != currentUser?.Id)
+                                    {
+                                        <button class="btn btn-sm btn-outline-danger report-button" data-post-id="@post.PostId">
+                                            <i class="bi bi-flag"></i> Report
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="post-content">
+                                @Html.Raw(post.Content) @* Hiển thị nội dung HTML đã được định dạng nếu có *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @* TODO: Chức năng phân trang ở đây *@
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            @* Partial View cho form trả lời nhanh - Người 2 sẽ triển khai *@
+            <div class="card mt-4">
+                <div class="card-header">Quick Reply</div>
+                <div class="card-body">
+                    <form asp-controller="Post" asp-action="Create" method="post">
+                        <input type="hidden" name="ThreadId" value="@Model.ThreadId" />
+                        <div class="form-group mb-3">
+                            <textarea name="Content" class="form-control" rows="5" placeholder="Type your reply here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit Reply</button>
+                    </form>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No posts in this thread yet. Be the first to reply!
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            @* Form trả lời đầu tiên nếu chưa có bài nào *@
+            <div class="card mt-4">
+                <div class="card-header">Start the conversation</div>
+                <div class="card-body">
+                    <form asp-controller="Post" asp-action="Create" method="post">
+                        <input type="hidden" name="ThreadId" value="@Model.ThreadId" />
+                        <div class="form-group mb-3">
+                            <textarea name="Content" class="form-control" rows="5" placeholder="Type your first post here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit Post</button>
+                    </form>
+                </div>
+            </div>
+        }
+    }
+
+    <div class="mt-4">
+        <a asp-controller="Forum" asp-action="Details" asp-route-id="@Model.ForumId" class="btn btn-secondary">Back to Forum</a>
+    </div>
+</div>

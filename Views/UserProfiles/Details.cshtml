@@ -1,0 +1,53 @@
+﻿@model BlogWebsite.Models.UserProfile
+
+@{
+    ViewData["Title"] = $"Profile of {Model.DisplayName}";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>User Profile</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <img src="@(string.IsNullOrEmpty(Model.AvatarUrl) ? "/images/default-avatar.png" : Model.AvatarUrl)" alt="User Avatar" class="img-thumbnail" style="width:200px; height:200px; object-fit: cover;" />
+        </div>
+        <div class="col-md-9">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    Username
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.User.UserName)
+                </dd>
+                <dt class="col-sm-3">
+                    Display Name
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.DisplayName)
+                </dd>
+                <dt class="col-sm-3">
+                    Bio
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Bio)
+                </dd>
+                <dt class="col-sm-3">
+                    Reputation
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Reputation)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div>
+    @* Người dùng có thể chỉnh sửa hồ sơ của chính mình (sẽ được Người 3 thực hiện) *@
+    @if (User.Identity.Name == Model.User.UserName)
+    {
+        <a asp-action="Edit" asp-controller="UserProfiles">Edit My Profile</a>
+    }
+    | <a asp-action="Index" asp-controller="Home">Back to Home</a>
+</div>
