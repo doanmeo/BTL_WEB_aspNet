@@ -53,6 +53,26 @@ namespace BlogWebsite.Controllers
                 };
                 _context.Likes.Add(newLike);
                 await _context.SaveChangesAsync();
+
+                // Tạo thông báo cho chủ bài viết (nếu không phải tự like bài mình)
+                if (post.AppUserId != userId)
+                {
+                    var liker = await _userManager.FindByIdAsync(userId);
+                    var message = $"{liker?.UserName ?? "Someone"} liked your post.";
+
+                    var notification = new Notification
+                    {
+                        UserId = post.AppUserId,
+                        FromUserId = userId,
+                        Type = NotificationType.Like,
+                        Message = message,
+                        Link = Url.Action("Details", "Thread", new { id = post.ThreadId }),
+                        CreatedAt = DateTime.UtcNow
+                    };
+
+                    _context.Notifications.Add(notification);
+                    await _context.SaveChangesAsync();
+                }
                 // Trả về số lượng like mới
                 var likeCount = await _context.Likes.CountAsync(l => l.PostId == postId);
                 return Ok(new { liked = true, likeCount = likeCount });

@@ -1,0 +1,35 @@
+ @{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div class="container">
+    <h2 class="my-3" style="font-size: 24px; font-weight: 400;">Account details</h2>
+    
+    <div class="voz-settings-container">
+        <div class="voz-settings-sidebar">
+            <div class="voz-settings-group-title">Your account</div>
+            <a class=" @ManageNavPages.IndexNavClass(ViewContext) voz-settings-link" asp-page="./Index">Account details</a>
+            <a class=" @ManageNavPages.EmailNavClass(ViewContext) voz-settings-link" asp-page="./Email">Email & Password</a>
+            <a class=" @ManageNavPages.ChangePasswordNavClass(ViewContext) voz-settings-link" asp-page="./ChangePassword">Security</a>
+            <a href="#" class="voz-settings-link">Privacy</a>
+            <a href="#" class="voz-settings-link">Preferences</a>
+            
+            <div class="p-3">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl=" @Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="btn btn-outline-secondary btn-sm w-100">Log out</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="voz-settings-content">
+            @RenderBody()
+        </div>
+    </div>
+</div>

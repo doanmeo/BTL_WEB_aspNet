@@ -13,10 +13,10 @@ namespace BlogWebsite.Models
         public string DisplayName { get; set; }
 
         [StringLength(255)]
-        public string AvatarUrl { get; set; }
+        public string? AvatarUrl { get; set; }
 
         [StringLength(500)]
-        public string Bio { get; set; }
+        public string? Bio { get; set; }
 
         public int Reputation { get; set; }
         public DateTime JoinedAt { get; set; }

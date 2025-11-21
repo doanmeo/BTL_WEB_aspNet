@@ -54,6 +54,26 @@ namespace BlogWebsite.Controllers
 
                 await _context.SaveChangesAsync();
 
+                // Tạo thông báo cho chủ thread (nếu người trả lời khác chủ thread)
+                if (thread.AppUserId != post.AppUserId)
+                {
+                    var replier = await _userManager.FindByIdAsync(post.AppUserId);
+                    var message = $"{replier?.UserName ?? "Someone"} replied to your thread \"{thread.Title}\".";
+
+                    var notification = new Notification
+                    {
+                        UserId = thread.AppUserId,
+                        FromUserId = post.AppUserId,
+                        Type = NotificationType.Reply,
+                        Message = message,
+                        Link = Url.Action("Details", "Thread", new { id = thread.ThreadId }),
+                        CreatedAt = DateTime.UtcNow
+                    };
+
+                    _context.Notifications.Add(notification);
+                    await _context.SaveChangesAsync();
+                }
+
                 // Redirect người dùng về lại trang thread họ vừa trả lời
                 return RedirectToAction("Details", "Thread", new { id = model.ThreadId });
             }

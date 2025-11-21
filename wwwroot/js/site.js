@@ -120,4 +120,100 @@ $(document).ready(function () {
             }
         });
     });
+
+    // --- Thông báo (bell icon) ---
+    const notificationDropdown = $('#notificationDropdown');
+    const notificationList = $('#notificationList');
+    const notificationBadge = $('#notificationBadge');
+
+    function renderNotifications(data) {
+        notificationList.empty();
+
+        if (!data || !data.items || data.items.length === 0) {
+            notificationList.append('<div class="p-3 text-center text-muted small">No notifications</div>');
+            notificationBadge.addClass('d-none');
+            return;
+        }
+
+        data.items.forEach(function (n) {
+            const time = new Date(n.createdAt);
+            const timeText = time.toLocaleString();
+
+            const item = $('<a class="dropdown-item small py-2 px-3 d-flex justify-content-between align-items-start" href="' + (n.link || '#') + '"></a>');
+
+            const textDiv = $('<div class="me-2"></div>');
+            textDiv.append('<div>' + n.message + '</div>');
+            textDiv.append('<div class="text-muted" style="font-size: 11px;">' + timeText + '</div>');
+
+            item.append(textDiv);
+
+            if (!n.isRead) {
+                item.append('<span class="badge bg-primary rounded-pill ms-2" style="font-size: 9px;">New</span>');
+            }
+
+            notificationList.append(item);
+        });
+
+        if (data.unreadCount && data.unreadCount > 0) {
+            notificationBadge.text(data.unreadCount);
+            notificationBadge.removeClass('d-none');
+        } else {
+            notificationBadge.addClass('d-none');
+        }
+    }
+
+    function loadNotifications() {
+        $.ajax({
+            url: '/api/Notifications/Recent',
+            type: 'GET',
+            success: function (data) {
+                renderNotifications(data);
+            },
+            error: function (xhr) {
+                console.error('Error loading notifications', xhr);
+            }
+        });
+    }
+
+    if (notificationDropdown.length) {
+        // Load khi bấm vào chuông
+        notificationDropdown.on('click', function () {
+            loadNotifications();
+        });
+
+        // Nút mark all read
+        $('#markAllNotificationsRead').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/api/Notifications/MarkAllAsRead',
+                type: 'POST',
+                headers: {
+                    RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function () {
+                    // Sau khi đánh dấu đã đọc, load lại để cập nhật
+                    loadNotifications();
+                },
+                error: function (xhr) {
+                    console.error('Error marking notifications as read', xhr);
+                }
+            });
+        });
+
+        // Thỉnh thoảng refresh badge (mỗi 60s)
+        setInterval(function () {
+            $.ajax({
+                url: '/api/Notifications/Recent',
+                type: 'GET',
+                success: function (data) {
+                    if (data && data.unreadCount && data.unreadCount > 0) {
+                        notificationBadge.text(data.unreadCount);
+                        notificationBadge.removeClass('d-none');
+                    } else {
+                        notificationBadge.addClass('d-none');
+                    }
+                }
+            });
+        }, 60000);
+    }
 });

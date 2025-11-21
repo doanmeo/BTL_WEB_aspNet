@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Account details";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="voz-content-header">
+    Account details
+</div>
+
+<div class="voz-content-body">
+    <partial name="_StatusMessage" for="StatusMessage" />
+
+    <form id="profile-form" method="post" enctype="multipart/form-data">
+
+        <div class="voz-form-row">
+            <div class="voz-form-label">Username:</div>
+            <div class="voz-form-input">
+                <input asp-for="Username" class="form-control" disabled style="background:#f5f5f5; width: 50%;" />
+            </div>
+        </div>
+
+        <div class="voz-form-row">
+            <div class="voz-form-label">Phone number:</div>
+            <div class="voz-form-input">
+                <input asp-for="Input.PhoneNumber" class="form-control" style="width: 50%;" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger small"></span>
+            </div>
+        </div>
+
+        <div class="voz-form-row">
+            <div class="voz-form-label">Email options:</div>
+            <div class="voz-form-input">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked id="check1">
+                    <label class="form-check-label text-muted small" for="check1">
+                        Receive news and update emails
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check2">
+                    <label class="form-check-label text-muted small" for="check2">
+                        Receive activity summary emails
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="voz-form-row">
+            <div class="voz-form-label">Avatar:</div>
+            <div class="voz-form-input d-flex align-items-center">
+                <div style="width: 80px; height: 80px; background: #2f6f9f; color: #fff; font-size: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 15px;">
+                    @User.Identity.Name?.Substring(0, 1).ToUpper()
+                </div>
+                <div class="small text-muted">
+                    Click the image to change your avatar.<br>
+                    <input type="file" class="mt-2 form-control form-control-sm" style="width: 250px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="voz-form-row">
+            <div class="voz-form-label">Profile banner:</div>
+            <div class="voz-form-input">
+                <button type="button" class="btn btn-light btn-sm border">Edit profile banner</button>
+            </div>
+        </div>
+
+        <div class="mt-4 text-center border-top pt-3">
+            <button id="update-profile-button" type="submit" class="voz-btn-save">
+                <i class="fa-solid fa-floppy-disk"></i> Save
+            </button>
+        </div>
+
+    </form>
+</div>

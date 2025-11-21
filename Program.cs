@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using BlogWebsite.Models;
 using BlogWebsite.Data; // Thêm using cho DbSeeder
@@ -26,7 +26,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        await DbSeeder.SeedRolesAndAdminAsync(services);
+        DbSeeder.SeedAllAsync(services).Wait();
     }
     catch (Exception ex)
     {

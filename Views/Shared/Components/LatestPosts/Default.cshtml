@@ -1,0 +1,37 @@
+@model List<BlogWebsite.Models.Thread>
+
+<div class="list-group list-group-flush">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var thread in Model)
+        {
+            @await Html.PartialAsync("_ThreadItemPartial", thread, new ViewDataDictionary(ViewData) { { "DisplayMode", "compact" } })
+        }
+    }
+    else
+    {
+        <div class="list-group-item p-3 text-center text-muted small">
+            No posts yet
+        </div>
+    }
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="card-footer bg-light py-2 text-center">
+        <a asp-controller="Thread" asp-action="NewPosts" class="text-decoration-none small fw-semibold" style="color: #495057;">
+            View all new posts <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+    </div>
+}
+
+<style>
+    .list-group-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .list-group-item a:hover {
+        text-decoration: underline !important;
+    }
+</style>
+

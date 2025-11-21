@@ -1,0 +1,44 @@
+@model List<BlogWebsite.Models.Thread>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var thread in Model)
+    {
+        var replyCount = (thread.Posts?.Count ?? 0) - 1;
+        if (replyCount < 0) replyCount = 0;
+        
+        <div class="d-flex mb-3">
+            <div class="flex-shrink-0">
+                @if (!string.IsNullOrEmpty(thread.AppUser?.UserProfile?.AvatarUrl))
+                {
+                    <img src="@thread.AppUser.UserProfile.AvatarUrl" class="rounded-circle me-2" width="32" height="32">
+                }
+                else
+                {
+                    <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold me-2" style="width:32px;height:32px;font-size:12px;">
+                        @(thread.AppUser?.UserName?.Length > 0 ? thread.AppUser.UserName.Substring(0, 1).ToUpper() : "?")
+                    </div>
+                }
+            </div>
+            <div style="font-size: 13px; line-height: 1.3; flex: 1; min-width: 0;">
+                <a asp-controller="Thread" asp-action="Details" asp-route-id="@thread.ThreadId" 
+                   style="font-weight: 600; color: #333; display: block; word-break: break-word; text-decoration: none;"
+                   class="hover-underline">
+                    @thread.Title
+                </a>
+                <div class="text-muted small">Replies: @replyCount</div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="text-center text-muted py-3 small">No trending posts yet</div>
+}
+
+<style>
+    .hover-underline:hover {
+        text-decoration: underline !important;
+    }
+</style>
+

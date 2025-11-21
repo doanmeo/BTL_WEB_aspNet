@@ -1,60 +1,78 @@
-﻿@model IEnumerable<BlogWebsite.Models.Category>
-@{
-    ViewData["Title"] = "Home Page";
+@model List<BlogWebsite.Models.Category>
+ @{
+    ViewData["Title"] = "Diễn đàn";
 }
 
-<div class="container">
-    @foreach (var category in Model)
-    {
-        <div class="card mb-4">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">@category.Name</h4>
-                <small>@category.Description</small>
+<div class="row">
+    <div class="col-lg-9 col-12">
+        
+        @foreach (var category in Model)
+        {
+            <div class="voz-category-block mb-3 border rounded bg-white">
+                <div class="p-2 px-3" style="background-color: #f0f7fc; border-bottom: 1px solid #dfdfdf;">
+                    <a href="#" style="font-weight: 700; font-size: 16px; color: #185875;"> @category.Name</a>
+                </div>
+
+                @foreach (var forum in category.Forums.Where(f => !f.IsDeleted))
+                {
+                    <div class="d-flex align-items-center p-2 px-3 border-bottom" style="min-height: 60px;">
+                        <div class="me-3 text-center" style="width: 40px;">
+                            <i class="fa-solid fa-comments fa-2x" style="color: #dce3e8;"></i>
+                        </div>
+
+                        <div class="flex-grow-1">
+                            <a asp-controller="Forum" asp-action="Details" asp-route-id=" @forum.ForumId" 
+                               style="font-weight: 700; font-size: 15px; color: #141414;">
+                               @forum.Name
+                            </a>
+                            <div class="text-muted small"> @forum.Description</div>
+                            </div>
+
+                        <div class="d-none d-md-block text-end px-3" style="width: 150px; font-size: 12px; color: #8c8c8c;">
+                            <div>Threads: 1.2K</div>
+                            <div>Messages: 50K</div>
+                        </div>
+
+                        <div class="d-none d-lg-flex align-items-center" style="width: 240px; font-size: 12px;">
+                            <img src="https://via.placeholder.com/30" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                            <div style="line-height: 1.2; overflow: hidden;">
+                                <a href="#" style="font-weight: 600; color: #333; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px;">
+                                    Tên bài viết mới nhất ở đây dài quá thì cắt...
+                                </a>
+                                <div class="text-muted">
+                                    <span style="color: #8c8c8c;">Yesterday at 10:00 PM</span>
+                                    <span style="color: #8c8c8c;">User123</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-            <table class="table table-striped table-hover mb-0">
-                <thead class="thead-light">
-                    <tr>
-                        <th style="width: 60%;">Forum</th>
-                        <th style="width: 10%; text-align: center;">Threads</th>
-                        <th style="width: 10%; text-align: center;">Posts</th>
-                        <th style="width: 20%;">Last Post</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (category.Forums != null && category.Forums.Any())
-                    {
-                        @foreach (var forum in category.Forums)
-                        {
-                            <tr>
-                                <td>
-                                    <h5 class="mb-1">
-                                        <a asp-controller="Forum" asp-action="Details" asp-route-id="@forum.ForumId">@forum.Name</a>
-                                    </h5>
-                                    <small class="text-muted">@forum.Description</small>
-                                </td>
-                                <td class="text-center">
-                                    @* TODO: Hiển thị số lượng thread *@
-                                    0
-                                </td>
-                                <td class="text-center">
-                                    @* TODO: Hiển thị số lượng post *@
-                                    0
-                                </td>
-                                <td>
-                                    @* TODO: Hiển thị thông tin bài viết cuối *@
-                                    <small>No posts yet</small>
-                                </td>
-                            </tr>
-                        }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="4">No forums in this category yet.</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        }
+    </div>
+
+    <div class="col-lg-3 col-12 d-none d-lg-block">
+        
+        <div class="card mb-3 border">
+            <div class="card-header bg-light py-2" style="font-weight: 600; color: #495057; font-size: 13px;">
+                Trending content
+            </div>
+            <div class="card-body p-2">
+                @await Component.InvokeAsync("TrendingPosts", new { count = 5 })
+            </div>
         </div>
-    }
+
+        <div class="card mb-3 border">
+            <div class="card-header bg-light py-2 d-flex justify-content-between align-items-center" style="font-weight: 600; color: #495057; font-size: 13px;">
+                <span>Latest posts</span>
+            </div>
+            <div class="card-body p-0">
+                @await Component.InvokeAsync("LatestPosts", new { count = 10 })
+            </div>
+        </div>
+
+        <div class="text-muted small text-center">
+            &copy; 2025 VOZ Clone. All rights reserved.
+        </div>
+    </div>
 </div>

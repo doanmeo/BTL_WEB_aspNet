@@ -1,0 +1,52 @@
+﻿@model BlogWebsite.Models.ViewModels.CreateThreadViewModel
+
+@{
+    ViewData["Title"] = "Create new thread";
+}
+
+<div class="container py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Forums</a></li>
+            <li class="breadcrumb-item active">@Model.ForumName</li>
+        </ol>
+    </nav>
+
+    <h2 class="mb-4">Post thread in: <span class="text-primary">@Model.ForumName</span></h2>
+
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input type="hidden" asp-for="ForumId" />
+        <input type="hidden" asp-for="ForumName" />
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label fw-bold">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Enter a descriptive title..." />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Content" class="form-label fw-bold">Content</label>
+
+            @* Tạm thời tắt tính năng chèn ảnh, chỉ dùng textarea thuần *@
+            <textarea asp-for="Content" id="threadEditor" class="form-control" rows="10" placeholder="Viết nội dung tại đây..."></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+
+            <div class="form-text text-muted small mt-1">
+                * Hiện tại chỉ hỗ trợ đăng bài dạng văn bản. Tính năng chèn ảnh sẽ được bật lại sau.
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+            <a asp-controller="Forum" asp-action="Details" asp-route-id="@Model.ForumId" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary px-4 fw-bold">Post Thread</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

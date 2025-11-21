@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using BlogWebsite.Models; // Đảm bảo AppUser model của bạn được using tại đây
+using BlogWebsite.Models;
 
 namespace BlogWebsite.Areas.Identity.Pages.Account
 {
@@ -24,9 +24,10 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private readonly BlogWebsite.Models.ApplicationDbContext _context; // Inject DbContext
+        private readonly BlogWebsite.Models.ApplicationDbContext _context;
 
-        public RegisterModel(UserManager<AppUser> userManager,
+        public RegisterModel(
+            UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
@@ -36,7 +37,7 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-            _context = context; // Khởi tạo DbContext
+            _context = context;
         }
 
         [BindProperty]
@@ -73,42 +74,42 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Content("~");
+            returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
                 var user = new AppUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    // Gán vai trò "User" mặc định cho người dùng mới
                     await _userManager.AddToRoleAsync(user, "User");
 
-                    // Tạo UserProfile cho người dùng mới đăng ký
                     var userProfile = new UserProfile
                     {
                         UserId = user.Id,
                         DisplayName = user.UserName,
                         JoinedAt = DateTime.UtcNow,
                         Reputation = 0,
-                        AvatarUrl = "/images/default-avatar.png" // Avatar mặc định
+                        AvatarUrl = "/images/default-avatar.png",
+                        Bio = "" // SỬA LỖI: Thêm giá trị mặc định cho Bio
                     };
                     _context.UserProfiles.Add(userProfile);
                     await _context.SaveChangesAsync();
 
-                    var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    // Giả lập IEmailSender nếu bạn chưa cấu hình
+                    // await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -126,7 +127,6 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return Page();
         }
     }

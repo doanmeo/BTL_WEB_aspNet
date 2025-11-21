@@ -30,5 +30,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogWebsite.Controllers.NotificationsController",
+    "Method": "MarkAllAsRead",
+    "RelativePath": "api/Notifications/MarkAllAsRead",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogWebsite.Controllers.NotificationsController",
+    "Method": "GetRecent",
+    "RelativePath": "api/Notifications/Recent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

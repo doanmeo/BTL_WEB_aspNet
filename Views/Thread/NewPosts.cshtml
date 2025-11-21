@@ -1,0 +1,93 @@
+﻿@model List<BlogWebsite.Models.Thread>
+@{
+    ViewData["Title"] = "New posts";
+}
+
+<div class="container my-3">
+
+    <nav aria-label="breadcrumb" class="small mb-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="text-muted text-decoration-none"><i class="fa-solid fa-house"></i></a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Forums</a></li>
+            <li class="breadcrumb-item active">New posts</li>
+        </ol>
+    </nav>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-normal mb-0">New posts</h2>
+        <button class="btn btn-warning btn-sm fw-bold text-white" style="background-color: #d97f09; border: none;" data-bs-toggle="modal" data-bs-target="#postThreadModal">
+            <i class="fa-solid fa-pen-to-square"></i> Post thread
+        </button>
+    </div>
+
+    <div class="card mb-3 border-0 bg-transparent">
+        <div class="card-header bg-white border-bottom p-0">
+            <ul class="nav nav-tabs card-header-tabs border-0">
+                <li class="nav-item">
+                    <a class="nav-link text-muted border-0" href="#">What's new</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted border-0" href="#">Featured content</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold border-start border-top border-end bg-white" href="#">New posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted border-0" href="#">New profile posts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-2 bg-light p-2 rounded border">
+        <div>
+            <a href="#" class="btn btn-sm btn-white border active">1</a>
+            <a href="#" class="btn btn-sm btn-white border">2</a>
+            <a href="#" class="btn btn-sm btn-white border">3</a>
+            <span class="mx-1 text-muted">...</span>
+            <a href="#" class="btn btn-sm btn-white border">Next</a>
+        </div>
+        <div class="small text-muted">
+            <a href="#" class="text-decoration-none text-muted me-2">Filters <i class="fa-solid fa-caret-down"></i></a>
+        </div>
+    </div>
+
+    <div class="card border shadow-sm">
+        <div class="list-group list-group-flush">
+            @foreach (var thread in Model)
+            {
+                @await Html.PartialAsync("_ThreadItemPartial", thread, new ViewDataDictionary(ViewData) { { "DisplayMode", "full" } })
+            }
+        </div>
+    </div>
+
+    <div class="mt-2">
+        <a href="#" class="text-muted small text-decoration-none">Mark forums read</a>
+    </div>
+</div>
+
+<style>
+    /* CSS riêng cho trang New Posts để giống VOZ */
+    .hover-bg-light:hover {
+        background-color: #f8f9fa;
+    }
+
+    .hover-underline:hover {
+        text-decoration: underline !important;
+    }
+
+    .badge {
+        font-weight: 500;
+        border-radius: 2px;
+    }
+
+    .nav-tabs .nav-link {
+        color: #6c757d;
+        font-weight: 500;
+    }
+
+        .nav-tabs .nav-link.active {
+            color: #495057;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+</style>

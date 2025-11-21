@@ -120,6 +120,12 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\uploads\24d9b6c3-28d3-4bb5-9967-207f473a1654_Screenshot_2.png
+wwwroot\uploads\4b2b6fdb-5127-477e-86c5-76987c7d5160_Screenshot 2025-11-21 113126.png
+wwwroot\uploads\6b4431aa-2b54-4ad9-bcb7-a098ac1d4999_Screenshot (2).png
+wwwroot\uploads\aeba2508-fa42-47a3-a079-71dccbaa4679_Screenshot_2.png
+wwwroot\uploads\c2376b9a-f08a-4fb8-821f-435c2dc5c33e_Screenshot (2).png
+wwwroot\uploads\f8d320c2-c9ff-44a7-a5e9-9c7e4423298a_Screenshot_2.png
 wwwroot\vendors\chart.js\Chart.min.js
 wwwroot\vendors\css\vendor.bundle.base.css
 wwwroot\vendors\js\bootstrap.min.js.map

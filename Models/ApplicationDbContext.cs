@@ -14,6 +14,7 @@ namespace BlogWebsite.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Report> Reports { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -39,6 +40,11 @@ namespace BlogWebsite.Models
             // Cấu hình để lưu Enum ReportStatus dưới dạng chuỗi (dễ đọc)
             builder.Entity<Report>()
                 .Property(r => r.Status)
+                .HasConversion<string>();
+
+            // Lưu enum NotificationType dạng string cho dễ đọc
+            builder.Entity<Notification>()
+                .Property(n => n.Type)
                 .HasConversion<string>();
 
             // Cấu hình các mối quan hệ ON DELETE

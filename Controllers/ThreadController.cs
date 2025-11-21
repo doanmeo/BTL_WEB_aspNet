@@ -1,12 +1,13 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using BlogWebsite.Models;
+using BlogWebsite.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BlogWebsite.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
+using System.Linq;
 using System.Security.Claims;
-using BlogWebsite.Models.ViewModels;
+using System.Threading.Tasks;
 using Thread = BlogWebsite.Models.Thread;
 
 namespace BlogWebsite.Controllers
@@ -15,11 +16,13 @@ namespace BlogWebsite.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<AppUser> _userManager;
+       
 
         public ThreadController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
             _userManager = userManager;
+            
         }
 
         // GET: Thread/Details/5
@@ -45,76 +48,84 @@ namespace BlogWebsite.Controllers
             return View(thread);
         }
 
-        // GET: Thread/Create?forumId=5
-        [Authorize]
+        // GET: Hiển thị form đăng bài
+        [Authorize] // Bắt buộc đăng nhập mới được đăng
+        [HttpGet]
         public async Task<IActionResult> Create(int forumId)
         {
-            var forum = await _context.Forums.FirstOrDefaultAsync(f => f.ForumId == forumId && !f.IsDeleted);
-            if (forum == null)
-            {
-                return NotFound("The specified forum does not exist.");
-            }
+            var forum = await _context.Forums.FindAsync(forumId);
+            if (forum == null) return NotFound();
 
-            // Tạo ViewModel và gán ForumId
-            var model = new ThreadViewModel
-            {
-                ForumId = forumId
-            };
-
-            ViewBag.ForumName = forum.Name; // Gửi tên Forum qua ViewBag để hiển thị trên View
+            // Truyền ForumId sang View để tí nữa Post lên biết bài thuộc forum nào
+            var model = new CreateThreadViewModel { ForumId = forumId, ForumName = forum.Name };
             return View(model);
         }
 
         // POST: Thread/Create
+        // POST: Xử lý lưu bài viết
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ThreadViewModel model)
+        public async Task<IActionResult> Create(CreateThreadViewModel model)
         {
-            var forum = await _context.Forums.FirstOrDefaultAsync(f => f.ForumId == model.ForumId && !f.IsDeleted);
-            if (forum == null)
-            {
-                ModelState.AddModelError("ForumId", "The specified forum does not exist.");
-            }
-
             if (ModelState.IsValid)
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var now = DateTime.UtcNow;
+                var userId = _userManager.GetUserId(User);
 
-                // Bước 1: Tạo đối tượng Thread
-                var newThread = new Thread
+                // BƯỚC 1: TẠO THREAD (Chỉ lưu Tiêu đề)
+                var thread = new Thread
                 {
+                    Title = model.Title, // <--- Tiêu đề vào đây
                     ForumId = model.ForumId,
-                    Title = model.Title,
                     AppUserId = userId,
-                    CreatedAt = now,
-                    UpdatedAt = now, // Khi mới tạo, UpdatedAt = CreatedAt
+                    CreatedAt = DateTime.Now,
                     ViewCount = 0,
+                    IsDeleted = false,
                     IsLocked = false
                 };
 
-                // Bước 2: Tạo bài Post đầu tiên cho Thread đó
-                var firstPost = new Post
-                {
-                    Content = model.Content,
-                    AppUserId = userId,
-                    CreatedAt = now,
-                    Thread = newThread // Gán trực tiếp Thread mới tạo vào Post
-                };
-
-                // Bước 3: Thêm cả hai vào DbContext và lưu lại
-                // Entity Framework đủ thông minh để xử lý việc này
-                _context.Posts.Add(firstPost);
+                // Lưu Thread trước để lấy được ThreadId
+                _context.Threads.Add(thread);
                 await _context.SaveChangesAsync();
 
-                // Chuyển hướng người dùng đến trang chi tiết của thread vừa tạo
-                return RedirectToAction("Details", new { id = newThread.ThreadId });
+                // BƯỚC 2: TẠO POST ĐẦU TIÊN (Lưu Nội dung)
+                // Chuyển đổi xuống dòng (\n) thành thẻ <br> nếu dùng textarea thường
+                string contentSafe = model.Content.Replace("\n", "<br>");
+
+                var post = new Post
+                {
+                    ThreadId = thread.ThreadId, // <--- Gắn vào Thread vừa tạo ở trên
+                    Content = contentSafe,      // <--- Nội dung vào đây
+                    AppUserId = userId,
+                    CreatedAt = DateTime.Now,
+                    IsDeleted = false
+                };
+
+                _context.Posts.Add(post);
+                await _context.SaveChangesAsync();
+
+                // 3. Chuyển hướng về trang chi tiết
+                return RedirectToAction("Details", new { id = thread.ThreadId });
             }
 
-            // Nếu model không hợp lệ, trả về lại form Create
-            ViewBag.ForumName = forum?.Name ?? "Unknown";
+            // Nếu lỗi thì hiện lại form
             return View(model);
+        }
+        // GET: /Thread/NewPosts
+        [HttpGet]
+        public async Task<IActionResult> NewPosts()
+        {
+            // Lấy 20 bài viết mới nhất (Sắp xếp theo ngày tạo giảm dần)
+            var threads = await _context.Threads
+                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile) // Lấy thông tin người tạo (Avatar)
+                .Include(t => t.Forum) // Lấy tên Forum (để hiện badge)
+                .Include(t => t.Posts) // Để đếm số replies
+                .Where(t => !t.IsDeleted)
+                .OrderByDescending(t => t.CreatedAt) // Quan trọng: Mới nhất lên đầu
+                .Take(20) // Lấy 20 bài mỗi trang
+                .ToListAsync();
+
+            return View(threads);
         }
     }
 }

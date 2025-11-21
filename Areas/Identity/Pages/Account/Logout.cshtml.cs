@@ -24,7 +24,7 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            if (returnUrl != null)
+            if (returnUrl != null && Url.IsLocalUrl(returnUrl))
             {
                 return LocalRedirect(returnUrl);
             }
@@ -32,7 +32,7 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
             {
                 // This happens if the user tries to access a page that requires authentication and they were logged out.
                 // In this case, we redirect to the home page.
-                return RedirectToPage();
+                return Redirect("~/");
             }
         }
     }
