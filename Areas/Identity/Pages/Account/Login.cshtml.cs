@@ -1,4 +1,4 @@
-using BlogWebsite.Models;
+﻿using BlogWebsite.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -36,9 +36,11 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            // --- SỬA: Đổi tên thành InputLogin và cho phép nhập cả Username/Email ---
             [Required]
-            [EmailAddress]
-            public string Email { get; set; }
+            [Display(Name = "Username or Email")]
+            public string InputLogin { get; set; }
+            // -----------------------------------------------------------------------
 
             [Required]
             [DataType(DataType.Password)]
@@ -55,9 +57,8 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
 
-            returnUrl ??= Url.Content("~");
+            returnUrl ??= Url.Content("~/");
 
-            // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -73,9 +74,27 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                // --- LOGIC ĐĂNG NHẬP THÔNG MINH ---
+                var userNameToSignIn = Input.InputLogin; // Mặc định giả sử là username
+
+                // 1. Thử tìm user bằng Username
+                var user = await _userManager.FindByNameAsync(Input.InputLogin);
+
+                // 2. Nếu không thấy, thử tìm bằng Email
+                if (user == null)
+                {
+                    user = await _userManager.FindByEmailAsync(Input.InputLogin);
+                }
+
+                // 3. Nếu tìm thấy user (bằng cách nào cũng được), lấy Username chuẩn để đăng nhập
+                if (user != null)
+                {
+                    userNameToSignIn = user.UserName;
+                }
+                // ----------------------------------
+
+                var result = await _signInManager.PasswordSignInAsync(userNameToSignIn, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -97,7 +116,6 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return Page();
         }
     }

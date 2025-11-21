@@ -274,5 +274,75 @@ namespace BlogWebsite.Controllers
                 return Json(new { success = true, watching = true, message = "Successfully watched." });
             }
         }
+        // GET: Hiển thị Modal Báo cáo
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> ReportPost(int id)
+        {
+            var post = await _context.Posts
+                .Include(p => p.AppUser) // Cần cái này để hiện tên tác giả
+                .FirstOrDefaultAsync(p => p.PostId == id);
+
+            if (post == null) return NotFound();
+
+            var model = new ReportViewModel
+            {
+                PostId = post.PostId,
+                PostAuthorName = post.AppUser.UserName,
+                // Cắt ngắn nội dung để hiển thị
+                PostContentSnippet = post.Content.Length > 100 ? post.Content.Substring(0, 100) + "..." : post.Content,
+                Reason = "" // Để trống lý do
+            };
+
+            // Trả về Partial View (Không phải View thường)
+            return PartialView("_ReportModalPartial", model);
+        }
+        // POST: Xử lý lưu báo cáo
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ReportPost(ReportViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = _userManager.GetUserId(User);
+
+                // 1. Kiểm tra trùng lặp (Sửa lại tên trường cho đúng Model của bạn)
+                // Lưu ý: Model của bạn dùng AppUserId và Status
+                bool hasReported = await _context.Reports
+                    .AnyAsync(r => r.PostId == model.PostId
+                                && r.AppUserId == userId
+                                && r.Status == ReportStatus.Pending);
+
+                if (hasReported)
+                {
+                    return Json(new { success = false, message = "Bạn đã báo cáo bài viết này rồi và đang chờ xử lý." });
+                }
+
+                // 2. Tạo đối tượng Report (SỬA ĐOẠN NÀY CHO KHỚP MODEL)
+                var report = new Report
+                {
+                    PostId = model.PostId,
+
+                    // Sửa: ReporterId -> AppUserId (Theo Model của bạn)
+                    AppUserId = userId,
+
+                    Reason = model.Reason,
+                    CreatedAt = DateTime.Now,
+
+                    // Sửa: IsResolved -> Status (Theo Model của bạn)
+                    Status = ReportStatus.Pending
+                };
+
+                _context.Reports.Add(report);
+                await _context.SaveChangesAsync();
+
+                return Json(new { success = true, message = "Báo cáo đã được gửi thành công!" });
+            }
+
+            return Json(new { success = false, message = "Vui lòng nhập lý do hợp lệ." });
+        }
+
+
     }
 }

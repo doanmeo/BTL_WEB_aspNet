@@ -1,34 +1,41 @@
 ﻿@model BlogWebsite.Models.ViewModels.ReportViewModel
 
-<div class="modal fade" id="reportPostModal" tabindex="-1" aria-labelledby="reportPostModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="reportModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="reportPostModalLabel">Report Post</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title fs-6 fw-bold">
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i>Báo cáo vi phạm
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form id="reportPostForm" asp-controller="Report" asp-action="Create" method="post">
-                @Html.AntiForgeryToken()
+
+            <form id="reportForm" asp-controller="Thread" asp-action="ReportPost" method="post">
                 <div class="modal-body">
-                    <input type="hidden" id="reportPostId" name="PostId" value="" />
-                    <div class="form-group">
-                        <label for="reportReason" class="col-form-label">Reason:</label>
-                        <textarea class="form-control" id="reportReason" name="Reason" rows="5"
-                                  placeholder="Please describe why you are reporting this post (e.g., spam, offensive content)."></textarea>
-                        <span id="reportReasonValidation" class="text-danger"></span>
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="PostId" />
+
+                    <div class="alert alert-light border mb-3 small text-muted">
+                        <strong>Thành viên:</strong> @Model.PostAuthorName<br />
+                        <div class="mt-1 fst-italic">
+                            "@Html.Raw(Model.PostContentSnippet)"
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Reason" class="form-label fw-bold">Lý do báo cáo:</label>
+                        <textarea asp-for="Reason" class="form-control" rows="4" placeholder="Vui lòng nhập lý do (Spam, Quảng cáo, Xúc phạm, Sai sự thật...)..." required></textarea>
+                        <span asp-validation-for="Reason" class="text-danger small"></span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Submit Report</button>
+
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+                    <button type="submit" class="btn btn-sm btn-danger fw-bold">
+                        <i class="fa-solid fa-paper-plane me-1"></i> Gửi báo cáo
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-@* @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-} *@

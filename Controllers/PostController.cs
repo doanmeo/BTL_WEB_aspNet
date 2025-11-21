@@ -83,5 +83,64 @@ namespace BlogWebsite.Controllers
             TempData["ErrorMessage"] = "Your reply could not be posted. Please check the errors.";
             return RedirectToAction("Details", "Thread", new { id = model.ThreadId });
         }
+
+        // GET: /Post/Edit/5
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            // 1. Tìm bài viết
+            var post = await _context.Posts.FindAsync(id);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            // 2. Kiểm tra quyền (Chỉ chủ bài viết hoặc Admin mới được sửa)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (post.AppUserId != currentUser.Id && !User.IsInRole("Admin"))
+            {
+                return Forbid(); // Trả về lỗi 403 (Không có quyền)
+            }
+
+            // 3. Trả về View
+            return View(post);
+        }
+        // POST: /Post/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, string content)
+        {
+            // 1. Tìm bài viết gốc
+            var postToUpdate = await _context.Posts.FindAsync(id);
+
+            if (postToUpdate == null)
+            {
+                return NotFound();
+            }
+
+            // 2. Kiểm tra quyền lần nữa (Bảo mật)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (postToUpdate.AppUserId != currentUser.Id && !User.IsInRole("Admin"))
+            {
+                return Forbid();
+            }
+
+            // 3. Cập nhật dữ liệu
+            if (string.IsNullOrWhiteSpace(content))
+            {
+                ModelState.AddModelError("Content", "Nội dung không được để trống");
+                return View(postToUpdate);
+            }
+
+            postToUpdate.Content = content;
+            // postToUpdate.UpdatedAt = DateTime.Now; // Bỏ comment nếu Model Post có trường UpdatedAt
+
+            // 4. Lưu và quay về trang Thread
+            await _context.SaveChangesAsync();
+
+            // Quay về trang chi tiết Thread, nhảy đúng đến vị trí bài viết vừa sửa (dùng fragment #post-id)
+            return RedirectToAction("Details", "Thread", new { id = postToUpdate.ThreadId }, $"post-{id}");
+        }
     }
 }

@@ -3,6 +3,94 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_threaditempartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_threaditempartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\viewmodels\\reportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\viewmodels\\reportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_reportmodalpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_reportmodalpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\thread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\thread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\post\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\post\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\viewmodels\\postviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\viewmodels\\postviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\reportstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\reportstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\userprofiles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\userprofiles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -11,27 +99,7 @@
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\newposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_threaditempartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_threaditempartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,7 +109,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,59 +141,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Thread\\Create.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml*",
-              "RelativeToolTip": "Views\\Thread\\Create.cshtml*",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAIwJIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T14:25:09.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NewPosts.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
-              "RelativeDocumentMoniker": "Views\\Thread\\NewPosts.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
-              "RelativeToolTip": "Views\\Thread\\NewPosts.cshtml",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAIwMcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T14:24:03.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Thread\\Details.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Details.cshtml",
-              "RelativeToolTip": "Views\\Thread\\Details.cshtml",
-              "ViewState": "AgIAAOgAAAAAAAAAAAAUwAUBAAACAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Details.cshtml*",
+              "RelativeToolTip": "Views\\Thread\\Details.cshtml*",
+              "ViewState": "AgIAABEBAAAAAAAAAAAAwCoBAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-21T14:22:12.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ThreadController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ThreadController.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs",
-              "RelativeToolTip": "Controllers\\ThreadController.cs",
-              "ViewState": "AgIAAOEAAAAAAAAAAADwvxUBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T14:21:12.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "_ThreadItemPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_ThreadItemPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ThreadItemPartial.cshtml",
@@ -133,24 +162,181 @@
               "RelativeToolTip": "Views\\Shared\\_ThreadItemPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T14:13:02.499Z"
+              "WhenOpened": "2025-11-21T14:13:02.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ThreadController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ThreadController.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs*",
+              "RelativeToolTip": "Controllers\\ThreadController.cs*",
+              "ViewState": "AgIAADkBAAAAAAAAAAAYwCoBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T14:21:12.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\ReportViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ReportViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\ReportViewModel.cs*",
+              "RelativeToolTip": "Models\\ViewModels\\ReportViewModel.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:35:15.227Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "ViewState": "AgIAAI8CAAAAAAAAAAAjwKYCAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-21T14:12:17.921Z",
+              "Title": "_ReportModalPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_ReportModalPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ReportModalPartial.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_ReportModalPartial.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_ReportModalPartial.cshtml*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwCgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:42:02.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Thread.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\Thread.cs",
+              "RelativeDocumentMoniker": "Models\\Thread.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\Thread.cs",
+              "RelativeToolTip": "Models\\Thread.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:09:24.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Post\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Post\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Post\\Edit.cshtml*",
+              "RelativeToolTip": "Views\\Post\\Edit.cshtml*",
+              "ViewState": "AgIAADQAAAAAAAAAAAAwwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:17:20.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\PostController.cs*",
+              "RelativeToolTip": "Controllers\\PostController.cs*",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAwI8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:16:01.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\wwwroot\\css\\site.css*",
+              "RelativeToolTip": "wwwroot\\css\\site.css*",
+              "ViewState": "AgIAAPkBAAAAAAAAAAAIwB0CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-21T15:23:34.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PostViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\PostViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\PostViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\PostViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\PostViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:58:33.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml*",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwDYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:04:33.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs*",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs*",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAwHkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:04:44.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml*",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:01:26.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs*",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs*",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAwKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:01:47.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReportStatus.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ReportStatus.cs",
+              "RelativeDocumentMoniker": "Models\\ReportStatus.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ReportStatus.cs",
+              "RelativeToolTip": "Models\\ReportStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:40:25.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -158,19 +344,122 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T14:12:58.07Z"
+              "WhenOpened": "2025-11-21T14:12:58.07Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
+              "Title": "Report.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\Report.cs",
+              "RelativeDocumentMoniker": "Models\\Report.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\Report.cs",
+              "RelativeToolTip": "Models\\Report.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:33:53.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\UserProfiles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserProfiles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\UserProfiles\\Edit.cshtml",
+              "RelativeToolTip": "Views\\UserProfiles\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:27:42.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T15:11:21.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\AppUser.cs",
+              "RelativeToolTip": "Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:10:04.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Models\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\UserProfile.cs",
+              "RelativeToolTip": "Models\\UserProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:09:57.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NewPosts.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\NewPosts.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
+              "RelativeToolTip": "Views\\Thread\\NewPosts.cshtml",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAIwMcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T14:24:03.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\Create.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
+              "RelativeToolTip": "Views\\Thread\\Create.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAIwJIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T14:25:09.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "DbSeeder.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Data\\DbSeeder.cs",
               "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Data\\DbSeeder.cs",
               "RelativeToolTip": "Data\\DbSeeder.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAvwJ4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T14:10:26.479Z"
+              "WhenOpened": "2025-11-21T14:10:26.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ViewState": "AgIAAI8CAAAAAAAAAAAjwKYCAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-21T14:12:17.921Z"
             }
           ]
         },

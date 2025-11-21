@@ -359,3 +359,184 @@ a:hover {
     border-radius: 3px;
 }
 .voz-btn-save:hover { background-color: #255a82; color: #fff; }
+
+/* === GIAO DIỆN BÀI VIẾT (POST STYLE) === */
+.post-container {
+    display: flex;
+    margin-bottom: 15px;
+    border: 1px solid #dce3e8;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow: hidden; /* Để bo góc không bị lẹm */
+}
+
+/* Cột trái: Thông tin User */
+.post-user-cell {
+    width: 180px; /* Chiều rộng cố định */
+    background-color: #f5f7fa; /* Màu xám nhạt */
+    border-right: 1px solid #dce3e8;
+    padding: 15px 10px;
+    text-align: center;
+    flex-shrink: 0; /* Không bị co lại trên màn hình nhỏ */
+}
+
+.post-avatar-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%; /* Bo tròn */
+    border: 1px solid #ccc;
+    padding: 2px;
+    background: #fff;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.post-user-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #141414;
+    text-decoration: none;
+    display: block;
+}
+
+.post-user-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.post-user-stats {
+    font-size: 11px;
+    color: #666;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+/* Cột phải: Nội dung bài viết */
+.post-content-cell {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Tránh vỡ layout khi có ảnh quá to */
+}
+
+/* Header nhỏ chứa ngày giờ */
+.post-header-bar {
+    padding: 8px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #8c8c8c;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Nội dung chính */
+.post-message {
+    padding: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #141414;
+    min-height: 150px; /* Chiều cao tối thiểu cho đẹp */
+}
+
+/* Footer chứa nút bấm */
+.post-footer-bar {
+    margin-top: auto; /* Đẩy xuống đáy */
+    padding: 10px 15px;
+    background: #fcfcfc;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* === GIAO DIỆN BÀI VIẾT (POST STYLE) === */
+.post-container {
+    display: flex;
+    margin-bottom: 15px;
+    border: 1px solid #dce3e8;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* Cột trái: Thông tin User */
+.post-user-cell {
+    width: 180px;
+    background-color: #f5f7fa; /* Màu xám nhạt */
+    border-right: 1px solid #dce3e8;
+    padding: 15px 10px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.post-avatar-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 2px;
+    background: #fff;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.post-user-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #141414;
+    text-decoration: none;
+    display: block;
+}
+
+.post-user-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.post-user-stats {
+    font-size: 11px;
+    color: #666;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+/* Cột phải: Nội dung */
+.post-content-cell {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.post-header-bar {
+    padding: 8px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #8c8c8c;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-message {
+    padding: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #141414;
+    flex-grow: 1;
+    min-height: 150px;
+}
+
+.post-footer-bar {
+    margin-top: auto;
+    padding: 10px 15px;
+    background: #fcfcfc;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
