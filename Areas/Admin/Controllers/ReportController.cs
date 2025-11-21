@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlogWebsite.Models;
 using Microsoft.AspNetCore.Authorization;
+using BlogWebsite.Models.ViewModels;
 
 namespace BlogWebsite.Areas.Admin.Controllers
 {
@@ -20,16 +21,37 @@ namespace BlogWebsite.Areas.Admin.Controllers
         }
 
         // GET: Admin/Report
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ReportStatus? statusFilter, int page = 1)
         {
-            var reports = await _context.Reports
-                                        .Include(r => r.Post)
-                                        .ThenInclude(p => p.AppUser)
-                                        .Include(r => r.AppUser)
-                                        .OrderBy(r => r.Status)
-                                        .ThenByDescending(r => r.CreatedAt)
-                                        .ToListAsync();
-            return View(reports);
+            var query = _context.Reports
+                                .Include(r => r.Post)
+                                .ThenInclude(p => p.AppUser)
+                                .Include(r => r.AppUser)
+                                .OrderBy(r => r.Status)
+                                .ThenByDescending(r => r.CreatedAt)
+                                .AsQueryable();
+
+            if (statusFilter.HasValue)
+            {
+                query = query.Where(r => r.Status == statusFilter);
+            }
+
+            ViewData["StatusFilter"] = statusFilter;
+            var totalReports = await _context.Reports.CountAsync();
+            var pendingReports = await _context.Reports.CountAsync(r => r.Status == ReportStatus.Pending);
+            var handledReports = await _context.Reports.CountAsync(r => r.Status == ReportStatus.Handled);
+            var ignoredReports = await _context.Reports.CountAsync(r => r.Status == ReportStatus.Ignored);
+
+            ViewBag.ReportStats = new
+            {
+                Total = totalReports,
+                Pending = pendingReports,
+                Handled = handledReports,
+                Ignored = ignoredReports
+            };
+
+            var pagedReports = await PagedResult<Report>.CreateAsync(query, page, 12);
+            return View(pagedReports);
         }
 
         // POST: Admin/Report/Process/5

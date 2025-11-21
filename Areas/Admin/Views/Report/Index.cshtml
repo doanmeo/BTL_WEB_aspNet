@@ -1,75 +1,162 @@
 ﻿@using BlogWebsite.Models
-@model IEnumerable<BlogWebsite.Models.Report>
+@using System.Linq
+@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Report>
 
 @{
-    ViewData["Title"] = "Reports Management";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Quản lý báo cáo";
+    var statusFilter = ViewData["StatusFilter"] as ReportStatus?;
+    var stats = ViewBag.ReportStats;
+    int total = stats != null ? (int)stats.Total : Model.TotalCount;
+    int pending = stats != null ? (int)stats.Pending : Model.Items.Count(r => r.Status == ReportStatus.Pending);
+    int handled = stats != null ? (int)stats.Handled : Model.Items.Count(r => r.Status == ReportStatus.Handled);
+    int ignored = stats != null ? (int)stats.Ignored : Model.Items.Count(r => r.Status == ReportStatus.Ignored);
+    var statusValue = statusFilter?.ToString();
 }
 
-<h1>Reports Management</h1>
-<p>List of user-submitted reports.</p>
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <p class="eyebrow">Trung tâm cảnh báo</p>
+        <h2 class="text-galaxy">Báo cáo cộng đồng</h2>
+        <p>Theo dõi tình trạng bài viết bị tố cáo và xử lý ngay trong dashboard.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-outline-galaxy">
+            <i class="mdi mdi-web me-1"></i> Xem trang chính
+        </a>
+    </div>
+</div>
 
-<table class="table table-bordered table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th>Reported Post</th>
-            <th>Reason</th>
-            <th>Reported By</th>
-            <th>Created At</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="row stats-grid">
+    <div class="col-md-3">
+        <div class="galaxy-card floating">
+            <div class="icon-badge"><i class="mdi mdi-alert-decagram"></i></div>
+            <p class="metric">@total</p>
+            <span>Tổng báo cáo</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="galaxy-card floating delay-1">
+            <div class="icon-badge"><i class="mdi mdi-timer-sand"></i></div>
+            <p class="metric">@pending</p>
+            <span>Đang chờ xử lý</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="galaxy-card floating delay-2">
+            <div class="icon-badge"><i class="mdi mdi-check-all"></i></div>
+            <p class="metric">@handled</p>
+            <span>Đã xử lý</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="galaxy-card floating delay-3">
+            <div class="icon-badge"><i class="mdi mdi-eye-off-outline"></i></div>
+            <p class="metric">@ignored</p>
+            <span>Đã bỏ qua</span>
+        </div>
+    </div>
+</div>
+
+<div class="filter-chips gap-2 mt-4">
+    <a asp-action="Index" asp-route-statusFilter="" class="chip-link @(statusFilter == null ? "active" : "")">Tất cả</a>
+    <a asp-action="Index" asp-route-statusFilter="Pending" class="chip-link @(statusFilter == ReportStatus.Pending ? "active" : "")">Chờ xử lý</a>
+    <a asp-action="Index" asp-route-statusFilter="Handled" class="chip-link @(statusFilter == ReportStatus.Handled ? "active" : "")">Đã xử lý</a>
+    <a asp-action="Index" asp-route-statusFilter="Ignored" class="chip-link @(statusFilter == ReportStatus.Ignored ? "active" : "")">Bỏ qua</a>
+</div>
+
+@if (TempData["SuccessMessage"] is string successMessage)
+{
+    <div class="alert alert-success mt-3">@successMessage</div>
+}
+
+<div class="galaxy-table-wrapper floating mt-3">
+    <table class="table galaxy-table align-middle">
+        <thead>
             <tr>
-                <td>
-                    @if (item.Post != null)
-                    {
-                        <a asp-controller="Thread" asp-action="Details" asp-route-id="@item.Post.ThreadId" target="_blank">
-                            @(item.Post.Content.Length > 50 ? item.Post.Content.Substring(0, 50) + "..." : item.Post.Content)
-                        </a>
-                    }
-                    else
-                    {
-                        <span>(Post not available)</span>
-                    }
-                </td>
-                <td>@Html.DisplayFor(modelItem => item.Reason)</td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AppUser.UserName)
-                </td>
-                <td>@item.CreatedAt.ToString("g")</td>
-                <td>
-                    @if (item.Status == ReportStatus.Pending)
-                    {
-                        <span class="badge bg-warning text-dark">Pending</span>
-                    }
-                    // SỬA LỖI: Đổi Processed thành Handled
-                    else if (item.Status == ReportStatus.Handled)
-                    {
-                        <span class="badge bg-success">Handled</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-secondary">Ignored</span>
-                    }
-                </td>
-                <td>
-                    @if (item.Status == ReportStatus.Pending)
-                    {
-                        <form asp-area="Admin" asp-controller="Report" asp-action="Process" asp-route-id="@item.ReportId" method="post" style="display:inline;">
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Are you sure? This will delete the post.');">Process</button>
-                        </form>
-                        <form asp-area="Admin" asp-controller="Report" asp-action="Ignore" asp-route-id="@item.ReportId" method="post" style="display:inline;">
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-secondary btn-sm">Ignore</button>
-                        </form>
-                    }
-                </td>
+                <th>Bài viết</th>
+                <th>Lý do</th>
+                <th>Người báo cáo</th>
+                <th>Thời gian</th>
+                <th>Trạng thái</th>
+                <th class="text-end">Thao tác</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        @if (item.Post != null)
+                        {
+                            <a class="link-galaxy" asp-area="" asp-controller="Thread" asp-action="Details" asp-route-id="@item.Post.ThreadId" target="_blank">
+                                @(item.Post.Content?.Length > 60 ? item.Post.Content.Substring(0, 60) + "..." : item.Post.Content)
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">(Bài viết không tồn tại)</span>
+                        }
+                    </td>
+                    <td>@item.Reason</td>
+                    <td>@item.AppUser?.UserName</td>
+                    <td>@item.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <span class="status-chip @(item.Status == ReportStatus.Pending ? "warning" : item.Status == ReportStatus.Handled ? "online" : "offline")">
+                            @item.Status
+                        </span>
+                    </td>
+                    <td class="text-end">
+                        @if (item.Status == ReportStatus.Pending)
+                        {
+                            <div class="btn-group gap-2">
+                                <form asp-area="Admin" asp-controller="Report" asp-action="Process" asp-route-id="@item.ReportId" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-gradient btn-sm" onclick="return confirm('Xóa bài viết này và đánh dấu đã xử lý?');">
+                                        <i class="mdi mdi-shield-check me-1"></i> Xử lý
+                                    </button>
+                                </form>
+                                <form asp-area="Admin" asp-controller="Report" asp-action="Ignore" asp-route-id="@item.ReportId" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-outline-galaxy btn-sm">
+                                        <i class="mdi mdi-eye-off-outline me-1"></i> Bỏ qua
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không khả dụng</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Reports pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link"
+                   asp-route-page="@(Model.PageIndex - 1)"
+                   asp-route-statusFilter="@statusValue">Trước</a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link"
+                       asp-route-page="@i"
+                       asp-route-statusFilter="@statusValue">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link"
+                   asp-route-page="@(Model.PageIndex + 1)"
+                   asp-route-statusFilter="@statusValue">Sau</a>
+            </li>
+        </ul>
+    </nav>
+}

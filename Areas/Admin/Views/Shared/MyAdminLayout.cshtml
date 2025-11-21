@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Purple Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="~/admin/assets/vendors/mdi/css/materialdesignicons.min.css"> @* Giữ nguyên nếu assets nằm trong wwwroot/admin/assets *@
-    <link rel="stylesheet" href="~/admin/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="~/admin/assets/css/style.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/admin-galaxy.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="~/admin/assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="~/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
@@ -40,12 +41,12 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
-    <script src="~/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="~/admin/assets/js/off-canvas.js"></script>
-    <script src="~/admin/assets/js/hoverable-collapse.js"></script>
-    <script src="~/admin/assets/js/misc.js"></script>
+    <script src="~/js/off-canvas.js"></script>
+    <script src="~/js/hoverable-collapse.js"></script>
+    <script src="~/js/misc.js"></script>
     <!-- endinject -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>

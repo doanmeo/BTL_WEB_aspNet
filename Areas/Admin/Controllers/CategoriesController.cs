@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlogWebsite.Models;
 using Microsoft.AspNetCore.Authorization;
+using BlogWebsite.Models.ViewModels;
 
 namespace BlogWebsite.Areas.Admin.Controllers
 {
@@ -20,10 +21,16 @@ namespace BlogWebsite.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            // Chỉ lấy những category chưa bị xóa mềm
-            return View(await _context.Categories.Where(c => !c.IsDeleted).ToListAsync());
+            var query = _context.Categories
+                .Where(c => !c.IsDeleted)
+                .OrderBy(c => c.Name)
+                .Include(c => c.Forums);
+
+            var pagedCategories = await PagedResult<Category>.CreateAsync(query, page, 10);
+            ViewBag.ActiveCategoryCount = pagedCategories.TotalCount;
+            return View(pagedCategories);
         }
 
         // GET: Admin/Categories/Details/5
@@ -49,6 +56,7 @@ namespace BlogWebsite.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                category.IsDeleted = false;
                 _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -76,7 +84,13 @@ namespace BlogWebsite.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(category);
+                    var existingCategory = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryId == id);
+                    if (existingCategory == null) return NotFound();
+
+                    existingCategory.Name = category.Name;
+                    existingCategory.Description = category.Description;
+                    existingCategory.IsDeleted = category.IsDeleted;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

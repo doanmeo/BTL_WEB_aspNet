@@ -16,13 +16,13 @@ namespace BlogWebsite.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<AppUser> _userManager;
-       
+
 
         public ThreadController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-            
+
         }
 
         // GET: Thread/Details/5

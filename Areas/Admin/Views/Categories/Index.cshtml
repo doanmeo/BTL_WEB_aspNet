@@ -1,47 +1,107 @@
-﻿@model IEnumerable<BlogWebsite.Models.Category>
-
+﻿@using System.Linq
+@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Category>
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Quản lý chuyên mục";
+    var activeCount = (int)(ViewBag.ActiveCategoryCount ?? Model.TotalCount);
 }
 
-<h1>Index</h1>
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <p class="eyebrow">Thư viện hành tinh</p>
+        <h2 class="text-galaxy">Chuyên mục diễn đàn</h2>
+        <p class="text-muted">Điều chỉnh, bật/tắt các khu vực thảo luận trên Voz Galaxy.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-area="Admin" asp-controller="Forums" asp-action="Index" class="btn btn-outline-galaxy">
+            <i class="mdi mdi-earth me-1"></i> Xem diễn đàn
+        </a>
+        <a asp-action="Create" class="btn btn-gradient">
+            <i class="mdi mdi-plus-circle-outline me-1"></i> Thêm chuyên mục
+        </a>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsDeleted)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDeleted)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-            </td>
-        </tr>
+<div class="row stats-grid">
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating">
+            <div class="icon-badge"><i class="mdi mdi-format-list-bulleted"></i></div>
+            <p class="metric">@Model.TotalCount</p>
+            <span>Tổng số chuyên mục</span>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating delay-1">
+            <div class="icon-badge"><i class="mdi mdi-check-circle-outline"></i></div>
+            <p class="metric">@activeCount</p>
+            <span>Đang hiển thị</span>
+        </div>
+    </div>
+</div>
+
+<div class="galaxy-table-wrapper floating mt-4">
+    <table class="table galaxy-table align-middle">
+        <thead>
+            <tr>
+                <th>Tên chuyên mục</th>
+                <th>Mô tả</th>
+                <th>Diễn đàn con</th>
+                <th>Trạng thái</th>
+                <th class="text-end">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                var forumCount = item.Forums?.Count ?? 0;
+                <tr>
+                    <td class="fw-semibold">@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>
+                        <span class="status-chip">
+                            <i class="mdi mdi-forum me-1"></i> @forumCount
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status-chip @(item.IsDeleted ? "offline" : "online")">
+                            @(item.IsDeleted ? "Đang ẩn" : "Đang sử dụng")
+                        </span>
+                    </td>
+                    <td class="text-end">
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn-icon" title="Chi tiết">
+                                <i class="mdi mdi-eye"></i>
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn-icon" title="Chỉnh sửa">
+                                <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn-icon danger" title="Xóa">
+                                <i class="mdi mdi-delete-outline"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Category pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex - 1)">Trước</a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex + 1)">Sau</a>
+            </li>
+        </ul>
+    </nav>
 }
-    </tbody>
-</table>
