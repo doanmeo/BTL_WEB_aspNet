@@ -19,10 +19,11 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link voz-nav-link active" asp-controller="Home" asp-action="Index">Forums</a>
+                            <a class="nav-link voz-nav-link" asp-controller="Home" asp-action="Index">Forums</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link voz-nav-link" href="#">Latests</a>
+                            <a class="nav-link voz-nav-link" asp-controller="Thread" asp-action="WhatsNew">Latests</a>
                         </li>
                     </ul>
 
@@ -95,20 +96,16 @@
         </nav>
 
         <div class="voz-subheader">
-            <div class="container">
-                <a asp-controller="Thread" asp-action="NewPosts" class="voz-sub-link">New posts</a>
-                <a href="#" class="voz-sub-link">Find threads</a>
-                
-                <div class="d-inline-block dropdown">
-                    <a href="#" class="voz-sub-link voz-dropdown-toggle" data-bs-toggle="dropdown">Watched</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Watched threads</a></li>
-                        <li><a class="dropdown-item" href="#">Watched forums</a></li>
-                    </ul>
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <a asp-controller="Thread" asp-action="NewPosts" class="voz-sub-link">New posts</a>
+                    <a asp-controller="Thread" asp-action="Watched" class="voz-sub-link">Watched</a>
                 </div>
-
-                <a href="#" class="voz-sub-link">Search forums</a>
-                <a href="#" class="voz-sub-link">Mark forums read</a>
+                <div>
+                    <form asp-controller="Forum" asp-action="MarkAllRead" method="post" class="d-inline">
+                        <button type="submit" class="voz-sub-link btn btn-link p-0" style="font-size: 13px;">Mark forums read</button>
+                    </form>
+                </div>
             </div>
         </div>
     </header>

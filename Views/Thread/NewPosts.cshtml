@@ -1,6 +1,13 @@
-﻿@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Thread>
+@model List<BlogWebsite.Models.Thread>
+@using BlogWebsite.Data
+
 @{
     ViewData["Title"] = "New posts";
+
+    // Lấy dữ liệu phân trang từ ViewBag
+    int currentPage = ViewBag.Page ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    string currentFilter = ViewBag.FilterTitle as string; // Lấy bộ lọc hiện tại
 }
 
 <div class="container my-3">
@@ -24,42 +31,109 @@
         <div class="card-header bg-white border-bottom p-0">
             <ul class="nav nav-tabs card-header-tabs border-0">
                 <li class="nav-item">
-                    <a class="nav-link text-muted border-0" href="#">What's new</a>
+                    <a class="nav-link text-muted border-0" asp-controller="Thread" asp-action="WhatsNew">What's new</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-muted border-0" href="#">Featured content</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link active fw-bold border-start border-top border-end bg-white" href="#">New posts</a>
+                    <a class="nav-link active fw-bold border-start border-top border-end bg-white" asp-controller="Thread" asp-action="NewPosts">New posts</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link text-muted border-0" href="#">New profile posts</a>
+                    <a class="nav-link text-muted border-0" asp-controller="Thread" asp-action="MyPosts">My posts</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="d-flex justify-content-between align-items-center mb-2 bg-light p-2 rounded border">
-        <div>
-            <div class="btn-group" role="group">
-                <a class="btn btn-sm btn-white border @(Model.HasPreviousPage ? "" : "disabled")" asp-route-page="@(Model.PageIndex - 1)">Prev</a>
-                @for (var i = 1; i <= Model.TotalPages; i++)
+    <div class="bg-light p-2 rounded border mb-2">
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                @if (totalPages > 1)
                 {
-                    <a class="btn btn-sm btn-white border @(i == Model.PageIndex ? "active" : "")" asp-route-page="@i">@i</a>
+                    <div class="btn-group btn-group-sm">
+                        @if (currentPage > 1)
+                        {
+                            <a href="@Url.Action("NewPosts", new { page = currentPage - 1, filterTitle = currentFilter })" class="btn btn-white border">Prev</a>
+                        }
+
+                        @for (int i = 1; i <= totalPages; i++)
+                        {
+                            if (i == 1 || i == totalPages || (i >= currentPage - 2 && i <= currentPage + 2))
+                            {
+                                <a href="@Url.Action("NewPosts", new { page = i, filterTitle = currentFilter })"
+                                   class="btn btn-white border @(i == currentPage ? "active bg-primary text-white" : "")">@i</a>
+                            }
+                            else if (i == currentPage - 3 || i == currentPage + 3)
+                            {
+                                <span class="btn btn-white border disabled">...</span>
+                            }
+                        }
+
+                        @if (currentPage < totalPages)
+                        {
+                            <a href="@Url.Action("NewPosts", new { page = currentPage + 1, filterTitle = currentFilter })" class="btn btn-white border">Next</a>
+                        }
+                    </div>
                 }
-                <a class="btn btn-sm btn-white border @(Model.HasNextPage ? "" : "disabled")" asp-route-page="@(Model.PageIndex + 1)">Next</a>
+            </div>
+
+            <div class="small text-muted position-relative">
+                @if (!string.IsNullOrEmpty(currentFilter))
+                {
+                    <a href="@Url.Action("NewPosts")" class="text-danger text-decoration-none me-2 fw-bold">
+                        <i class="fa-solid fa-xmark"></i> Clear Filter: @currentFilter
+                    </a>
+                }
+                <a href="#" class="text-decoration-none text-muted me-2 fw-bold" onclick="toggleFilterBox()">
+                    Filters <i class="fa-solid fa-filter"></i>
+                </a>
             </div>
         </div>
-        <div class="small text-muted">
-            <a href="#" class="text-decoration-none text-muted me-2">Filters <i class="fa-solid fa-caret-down"></i></a>
+
+        <div id="filterBox" class="mt-2 p-3 bg-white border rounded shadow-sm" style="display: none;">
+            <div class="fw-bold mb-2 small text-muted text-uppercase">Filter by Prefix</div>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="@Url.Action("NewPosts")"
+                   class="btn btn-sm @(string.IsNullOrEmpty(currentFilter) ? "btn-dark" : "btn-outline-secondary")">
+                    All
+                </a>
+                @foreach (var title in ThreadPrefixes.Titles)
+                {
+                    <a href="@Url.Action("NewPosts", new { filterTitle = title })"
+                       class="btn btn-sm @(currentFilter == title ? "btn-primary" : "btn-outline-secondary")">
+                        @title
+                    </a>
+                }
+            </div>
         </div>
     </div>
 
     <div class="card border shadow-sm">
         <div class="list-group list-group-flush">
-            @foreach (var thread in Model.Items)
+            @if (Model.Any())
             {
-                @await Html.PartialAsync("_ThreadItemPartial", thread, new ViewDataDictionary(ViewData) { { "DisplayMode", "full" } })
+                @foreach (var thread in Model)
+                {
+                    // Sử dụng lại Partial View của bạn để code gọn gàng
+                    @await Html.PartialAsync("_ThreadItemPartial", thread, new ViewDataDictionary(ViewData) { { "DisplayMode", "full" } })
+                }
+            }
+            else
+            {
+                <div class="p-5 text-center text-muted">
+                    <i class="fa-solid fa-filter-circle-xmark fa-3x mb-3"></i>
+                    <p>No threads found.</p>
+                    @if (!string.IsNullOrEmpty(currentFilter))
+                    {
+                        <p>Try clearing the filter: <strong>@currentFilter</strong></p>
+                        <a href="@Url.Action("NewPosts")" class="btn btn-outline-primary btn-sm">Clear Filter</a>
+                    }
+                </div>
             }
         </div>
     </div>
@@ -69,8 +143,18 @@
     </div>
 </div>
 
+<script>
+    function toggleFilterBox() {
+        var box = document.getElementById('filterBox');
+        if (box.style.display === 'none') {
+            box.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+        }
+    }
+</script>
+
 <style>
-    /* CSS riêng cho trang New Posts để giống VOZ */
     .hover-bg-light:hover {
         background-color: #f8f9fa;
     }
@@ -84,13 +168,33 @@
         border-radius: 2px;
     }
 
+    /* Style cho Tabs */
     .nav-tabs .nav-link {
         color: #6c757d;
         font-weight: 500;
     }
 
+        .nav-tabs .nav-link:hover {
+            color: #495057;
+        }
+
         .nav-tabs .nav-link.active {
             color: #495057;
             border-color: #dee2e6 #dee2e6 #fff;
+        }
+
+    /* Style cho nút phân trang */
+    .btn-white {
+        background-color: #fff;
+        color: #333;
+    }
+
+        .btn-white:hover {
+            background-color: #f8f9fa;
+        }
+
+        .btn-white.active {
+            border-color: #0d6efd;
+            z-index: 0;
         }
 </style>

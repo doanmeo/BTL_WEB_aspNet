@@ -16,47 +16,36 @@ namespace BlogWebsite.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<AppUser> _userManager;
-       
+
 
         public ThreadController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-            
+
         }
 
         // GET: Thread/Details/5
-        public async Task<IActionResult> Details(int? id, int page = 1)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
 
             var thread = await _context.Threads
-                .Include(t => t.Forum)
-                .Include(t => t.AppUser)
-                    .ThenInclude(u => u.UserProfile)
+                .Include(t => t.Forum) // Lấy thông tin Forum để hiển thị breadcrumb
+                .Include(t => t.Posts)
+                    .ThenInclude(p => p.AppUser)
+                    .ThenInclude(au => au.UserProfile)
                 .FirstOrDefaultAsync(m => m.ThreadId == id && !m.IsDeleted);
 
             if (thread == null) return NotFound();
+
+            thread.Posts = thread.Posts.Where(p => !p.IsDeleted).OrderBy(p => p.CreatedAt).ToList();
 
             thread.ViewCount++;
             _context.Update(thread);
             await _context.SaveChangesAsync();
 
-            var postsQuery = _context.Posts
-                .Where(p => p.ThreadId == thread.ThreadId && !p.IsDeleted)
-                .Include(p => p.AppUser)
-                    .ThenInclude(u => u.UserProfile)
-                .OrderBy(p => p.CreatedAt);
-
-            var pagedPosts = await PagedResult<Post>.CreateAsync(postsQuery, page, 10);
-
-            var viewModel = new ThreadDetailsViewModel
-            {
-                Thread = thread,
-                Posts = pagedPosts
-            };
-
-            return View(viewModel);
+            return View(thread);
         }
 
         // GET: Hiển thị form đăng bài
@@ -99,13 +88,14 @@ namespace BlogWebsite.Controllers
                 _context.Threads.Add(thread);
                 await _context.SaveChangesAsync();
 
-                // BƯỚC 2: TẠO POST ĐẦU TIÊN (Lưu Nội dung HTML từ trình soạn thảo)
-                var contentSafe = model.Content?.Trim() ?? string.Empty;
+                // BƯỚC 2: TẠO POST ĐẦU TIÊN (Lưu Nội dung)
+                // Chuyển đổi xuống dòng (\n) thành thẻ <br> nếu dùng textarea thường
+                string contentSafe = model.Content.Replace("\n", "<br>");
 
                 var post = new Post
                 {
                     ThreadId = thread.ThreadId, // <--- Gắn vào Thread vừa tạo ở trên
-                    Content = contentSafe,      // <--- Nội dung HTML từ Quill
+                    Content = contentSafe,      // <--- Nội dung vào đây
                     AppUserId = userId,
                     CreatedAt = DateTime.Now,
                     IsDeleted = false
@@ -123,17 +113,166 @@ namespace BlogWebsite.Controllers
         }
         // GET: /Thread/NewPosts
         [HttpGet]
-        public async Task<IActionResult> NewPosts(int page = 1)
+        public async Task<IActionResult> NewPosts(string searchQuery, int page = 1)
         {
+            int pageSize = 20; // Số bài mỗi trang
+
+            // 1. Query cơ bản (chưa chạy)
             var query = _context.Threads
                 .Include(t => t.AppUser).ThenInclude(u => u.UserProfile)
                 .Include(t => t.Forum)
                 .Include(t => t.Posts)
-                .Where(t => !t.IsDeleted)
-                .OrderByDescending(t => t.CreatedAt);
+                .Where(t => !t.IsDeleted);
 
-            var pagedThreads = await PagedResult<Thread>.CreateAsync(query, page, 20);
-            return View(pagedThreads);
+            // 2. Lọc theo nội dung bài viết (nếu có)
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                query = query.Where(t => t.Posts.Any(p => p.Content.Contains(searchQuery)));
+            }
+
+            // 3. Sắp xếp mới nhất
+            query = query.OrderByDescending(t => t.CreatedAt);
+
+            // 4. Tính toán phân trang
+            int totalItems = await query.CountAsync();
+            int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            // Đảm bảo page hợp lệ
+            page = Math.Max(1, Math.Min(page, totalPages > 0 ? totalPages : 1));
+
+            // 5. Lấy dữ liệu trang hiện tại
+            var threads = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            // 6. Truyền thông tin phân trang ra View
+            // Thay vì dùng ViewBag, chúng ta sẽ chuyển sang ViewModel ở các bước tiếp theo
+            ViewBag.Page = page;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.SearchQuery = searchQuery; // Để điền lại vào ô input
+
+            return View(threads);
+        }
+
+        // GET: /Thread/WhatsNew - dùng cho tab "What's new" (trending)
+        [HttpGet]
+        public async Task<IActionResult> WhatsNew()
+        {
+            // Lấy các thread có nhiều replies nhất (giống Trending)
+            var threadData = await _context.Threads
+                .Where(t => !t.IsDeleted)
+                .Select(t => new
+                {
+                    Thread = t,
+                    PostCount = t.Posts.Count(p => !p.IsDeleted)
+                })
+                .Where(x => x.PostCount > 1)
+                .OrderByDescending(x => x.PostCount)
+                .ThenByDescending(x => x.Thread.UpdatedAt ?? x.Thread.CreatedAt)
+                .Take(20)
+                .ToListAsync();
+
+            var threadIds = threadData.Select(x => x.Thread.ThreadId).ToList();
+
+            var threads = await _context.Threads
+                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile)
+                .Include(t => t.Forum)
+                .Include(t => t.Posts)
+                .Where(t => threadIds.Contains(t.ThreadId))
+                .ToListAsync();
+
+            // Giữ nguyên thứ tự theo PostCount
+            var dict = threads.ToDictionary(t => t.ThreadId);
+            var orderedThreads = threadIds
+                .Where(id => dict.ContainsKey(id))
+                .Select(id => dict[id])
+                .ToList();
+
+            return View(orderedThreads);
+        }
+
+        // GET: /Thread/MyPosts - tab "My posts" (trước là New profile posts)
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> MyPosts()
+        {
+            var userId = _userManager.GetUserId(User);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Challenge();
+            }
+
+            var threads = await _context.Threads
+                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile)
+                .Include(t => t.Forum)
+                .Include(t => t.Posts)
+                .Where(t => !t.IsDeleted && t.AppUserId == userId)
+                .OrderByDescending(t => t.UpdatedAt ?? t.CreatedAt)
+                .Take(20)
+                .ToListAsync();
+
+            return View(threads);
+        }
+        // GET: /Thread/Watched
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Watched()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var watchedThreadIds = await _context.WatchedThreads
+                .Where(w => w.AppUserId == userId)
+                .Select(w => w.ThreadId)
+                .ToListAsync();
+
+            var threads = await _context.Threads
+                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile)
+                .Include(t => t.Forum)
+                .Include(t => t.Posts)
+                .Where(t => watchedThreadIds.Contains(t.ThreadId) && !t.IsDeleted)
+                .OrderByDescending(t => t.UpdatedAt ?? t.CreatedAt)
+                .ToListAsync();
+
+            return View(threads);
+        }
+
+        // POST: /Thread/ToggleWatch/5
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> ToggleWatch(int id)
+        {
+            var userId = _userManager.GetUserId(User);
+            var thread = await _context.Threads.FindAsync(id);
+
+            if (thread == null)
+            {
+                return NotFound(new { success = false, message = "Thread not found." });
+            }
+
+            var existingWatch = await _context.WatchedThreads
+                .FirstOrDefaultAsync(w => w.ThreadId == id && w.AppUserId == userId);
+
+            if (existingWatch != null)
+            {
+                // Đã watch -> Bỏ watch
+                _context.WatchedThreads.Remove(existingWatch);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true, watching = false, message = "Successfully unwatched." });
+            }
+            else
+            {
+                // Chưa watch -> Thêm watch
+                var newWatch = new WatchedThread
+                {
+                    AppUserId = userId,
+                    ThreadId = id,
+                    WatchedAt = DateTime.UtcNow
+                };
+                _context.WatchedThreads.Add(newWatch);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true, watching = true, message = "Successfully watched." });
+            }
         }
     }
 }
