@@ -223,9 +223,9 @@
                 var threadId = button.data('thread-id');
                 var url = '/Thread/ToggleWatch';
 
-                $.post(url, { threadId: threadId })
+                $.post(url, { id: threadId })
                     .done(function (response) {
-                        if (response.isWatched) {
+                        if (response.watching) {
                             button.removeClass('btn-outline-dark').addClass('btn-dark');
                             textSpan.text('Unwatch');
                         } else {

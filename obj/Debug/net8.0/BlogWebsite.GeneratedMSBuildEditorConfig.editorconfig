@@ -17,277 +17,277 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogWebsite
 build_property.RootNamespace = BlogWebsite
-build_property.ProjectDir = C:\Users\PC\source\repos\test\BTL_WEB_aspNet\
+build_property.ProjectDir = C:\Users\ADMIN\source\repos\BTL_WEB_aspNet\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\PC\source\repos\test\BTL_WEB_aspNet
+build_property.MSBuildProjectDirectory = C:\Users\ADMIN\source\repos\BTL_WEB_aspNet
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Account/Login.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Create.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Delete.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Edit.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Dashboard/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Create.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9ydW1zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Delete.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9ydW1zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9ydW1zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Edit.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9ydW1zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Forums/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9ydW1zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Report/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/MyAdminLayout.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/MyAdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXE15QWRtaW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_footer.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFJlbmRlclxfZm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_navbar.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFJlbmRlclxfbmF2YmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_RenderLeftMenu.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/Render/_RenderLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXFJlbmRlclxfUmVuZGVyTGVmdE1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_AdminLeftMenu.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_AdminLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxlZnRNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_AdminNavbar.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_AdminNavbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbk5hdmJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_ReportModalPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Shared/_ReportModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9SZXBvcnRNb2RhbFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Users/Delete.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Users/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Users/Edit.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/Users/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Forum/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Forum/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Home/Index.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Home/Privacy.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Post/Edit.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Post/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Search/Results.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Search/Results.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFJlc3VsdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Components/ForumSelector/Default.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Components/ForumSelector/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9ydW1TZWxlY3RvclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Components/LatestPosts/Default.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Components/LatestPosts/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGF0ZXN0UG9zdHNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Components/MainFooter/Default.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Components/MainFooter/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWFpbkZvb3RlclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Components/MainHeader/Default.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Components/MainHeader/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWFpbkhlYWRlclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Components/TrendingPosts/Default.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Components/TrendingPosts/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVHJlbmRpbmdQb3N0c1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/Error.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/_ReportModalPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/_ReportModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZXBvcnRNb2RhbFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/_ThreadItemPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/_ThreadItemPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UaHJlYWRJdGVtUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/Create.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/MyPosts.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/MyPosts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXE15UG9zdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/NewPosts.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/NewPosts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXE5ld1Bvc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/Watched.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/Watched.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXFdhdGNoZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/WhatsNew.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Thread/WhatsNew.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXFdoYXRzTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/UserProfiles/Details.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/UserProfiles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/UserProfiles/Edit.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/UserProfiles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/_ViewImports.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/_ViewStart.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Shared/_Layout.cshtml]
+[C:/Users/ADMIN/source/repos/BTL_WEB_aspNet/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o3w0s43aou
