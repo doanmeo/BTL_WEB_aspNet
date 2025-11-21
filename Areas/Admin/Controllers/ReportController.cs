@@ -20,15 +20,23 @@ namespace BlogWebsite.Areas.Admin.Controllers
         }
 
         // GET: Admin/Report
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ReportStatus? statusFilter)
         {
-            var reports = await _context.Reports
-                                        .Include(r => r.Post)
-                                        .ThenInclude(p => p.AppUser)
-                                        .Include(r => r.AppUser)
-                                        .OrderBy(r => r.Status)
-                                        .ThenByDescending(r => r.CreatedAt)
-                                        .ToListAsync();
+            var query = _context.Reports
+                                .Include(r => r.Post)
+                                .ThenInclude(p => p.AppUser)
+                                .Include(r => r.AppUser)
+                                .OrderBy(r => r.Status)
+                                .ThenByDescending(r => r.CreatedAt)
+                                .AsQueryable();
+
+            if (statusFilter.HasValue)
+            {
+                query = query.Where(r => r.Status == statusFilter);
+            }
+
+            ViewData["StatusFilter"] = statusFilter;
+            var reports = await query.ToListAsync();
             return View(reports);
         }
 

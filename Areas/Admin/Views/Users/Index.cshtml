@@ -1,0 +1,55 @@
+@model IEnumerable<BlogWebsite.Models.AppUser>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Quản lý người dùng";
+}
+
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <p class="eyebrow">Phi hành gia</p>
+        <h2 class="text-galaxy">Quản lý người dùng</h2>
+        <p>Theo dõi hồ sơ, quyền hạn và hoạt động của từng thành viên.</p>
+    </div>
+    <div class="floating-orb medium"></div>
+</div>
+
+<div class="galaxy-table-wrapper floating">
+    <table class="table galaxy-table">
+        <thead>
+            <tr>
+                <th>Hồ sơ</th>
+                <th>Email</th>
+                <th>Liên hệ</th>
+                <th class="text-end">Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="@(user.UserProfile?.AvatarUrl ?? "/images/default-avatar.png")" class="avatar-sm me-3" alt="@user.UserName" />
+                            <div>
+                                <div class="fw-semibold">@user.UserName</div>
+                                <small class="text-muted">@user.UserProfile?.DisplayName ?? "Chưa cập nhật"</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex flex-column">
+                            <span>@user.Email</span>
+                            <small class="text-muted">@user.PhoneNumber</small>
+                        </div>
+                    </td>
+                    <td class="text-end">
+                        <span class="status-chip @(user.EmailConfirmed ? "online" : "offline")">
+                            @(user.EmailConfirmed ? "Đã xác thực" : "Chưa xác thực")
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

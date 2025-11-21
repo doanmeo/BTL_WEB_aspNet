@@ -1,0 +1,85 @@
+@model BlogWebsite.Areas.Admin.Models.DashboardSummaryViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="galaxy-hero floating">
+    <div class="hero-content">
+        <p class="eyebrow">Xin chào, @User.Identity?.Name</p>
+        <h1>Trạm điều khiển Voz Galaxy</h1>
+        <p class="lead">Quan sát hoạt động cộng đồng, duy trì trật tự và truyền cảm hứng cho các hành tinh thảo luận mới.</p>
+        <a asp-area="Admin" asp-controller="Forums" asp-action="Index" class="btn btn-gradient">Quản lý diễn đàn</a>
+    </div>
+    <div class="hero-orb"></div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="mb-4 text-galaxy">Tổng quan hệ thống</h3>
+    </div>
+</div>
+
+<div class="row stats-grid">
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating">
+            <div class="icon-badge"><i class="mdi mdi-account-group"></i></div>
+            <h4>Người dùng</h4>
+            <p class="metric">@Model.TotalUsers</p>
+            <span>Phi hành gia tham gia</span>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating delay-1">
+            <div class="icon-badge"><i class="mdi mdi-earth"></i></div>
+            <h4>Diễn đàn</h4>
+            <p class="metric">@Model.TotalForums</p>
+            <span>Hệ mặt trời thảo luận</span>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating delay-2">
+            <div class="icon-badge"><i class="mdi mdi-forum"></i></div>
+            <h4>Chủ đề</h4>
+            <p class="metric">@Model.TotalThreads</p>
+            <span>Mạch hội thoại</span>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="galaxy-card floating delay-3">
+            <div class="icon-badge"><i class="mdi mdi-script-text-outline"></i></div>
+            <h4>Bài viết</h4>
+            <p class="metric">@Model.TotalPosts</p>
+            <span>Tin nhắn truyền đi</span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="galaxy-panel floating">
+            <div class="panel-head">
+                <h5>Báo cáo chờ duyệt</h5>
+                <span class="status-badge">@Model.PendingReports</span>
+            </div>
+            <p>Hãy xử lý các báo cáo để đảm bảo hành tinh Voz luôn là nơi văn minh.</p>
+            <a asp-area="Admin" asp-controller="Report" asp-action="Index" class="btn btn-outline-galaxy">Đi tới trung tâm báo cáo</a>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="galaxy-panel floating delay-2">
+            <div class="panel-head">
+                <h5>Trạm radar</h5>
+            </div>
+            <div class="radar">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+                <div class="blip"></div>
+            </div>
+            <p>Radar mô phỏng tình trạng hoạt động chung của hệ thống.</p>
+        </div>
+    </div>
+</div>
+
+

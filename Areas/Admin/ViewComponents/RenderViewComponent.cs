@@ -13,7 +13,7 @@ namespace BlogWebsite.Areas.Admin.ViewComponents
             // Tạo danh sách các mục menu cho sidebar (left menu) của Admin
             var menuItems = new List<AdminMenuItem>
             {
-                new AdminMenuItem { Name = "Dashboard", Controller = "Home", IconCssClass = "mdi mdi-home" },
+                new AdminMenuItem { Name = "Dashboard", Controller = "Dashboard", IconCssClass = "mdi mdi-home" },
                 new AdminMenuItem { Name = "Categories", Controller = "Categories", IconCssClass = "mdi mdi-format-list-bulleted" },
                 new AdminMenuItem { Name = "Forums", Controller = "Forums", IconCssClass = "mdi mdi-comment-multiple-outline" },
                 new AdminMenuItem { Name = "Users", Controller = "Users", IconCssClass = "mdi mdi-account-multiple" },

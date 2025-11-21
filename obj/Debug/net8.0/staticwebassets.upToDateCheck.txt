@@ -136,3 +136,4 @@ wwwroot\vendors\mdi\fonts\materialdesignicons-webfont.eot
 wwwroot\vendors\mdi\fonts\materialdesignicons-webfont.ttf
 wwwroot\vendors\mdi\fonts\materialdesignicons-webfont.woff
 wwwroot\vendors\mdi\fonts\materialdesignicons-webfont.woff2
+wwwroot\css\admin-galaxy.css

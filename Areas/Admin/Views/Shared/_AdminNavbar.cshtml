@@ -1,48 +1,79 @@
-﻿@* Partial view này chứa HTML cho thanh điều hướng bên trên (header/navbar) của trang Admin *@
-<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+﻿@using BlogWebsite.Models
+@inject ApplicationDbContext Db
+
+@{
+    var pendingReports = Db.Reports.Count(r => r.Status == ReportStatus.Pending);
+    var totalUsers = Db.Users.Count();
+}
+
+<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row galaxy-navbar">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="~/admin/assets/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="~/admin/assets/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo text-galaxy" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+            <i class="mdi mdi-rocket-launch-outline me-2"></i> Voz Galaxy Admin
+        </a>
+        <a class="navbar-brand brand-logo-mini" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+            <i class="mdi mdi-rocket"></i>
+        </a>
     </div>
-    <div class="navbar-menu-wrapper d-flex align-items-stretch">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-        </button>
-        <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100" action="#">
-                <div class="input-group">
-                    <div class="input-group-prepend bg-transparent">
-                        <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                    </div>
-                    <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
-                </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        <div class="nav-search d-none d-md-flex">
+            <form asp-area="" asp-controller="Search" asp-action="Results" method="get" class="d-flex align-items-center">
+                <i class="mdi mdi-magnify me-2"></i>
+                <input type="text" name="query" class="form-control border-0 bg-transparent" placeholder="Tìm kiếm trên Voz..." />
             </form>
         </div>
-        <ul class="navbar-nav navbar-nav-right">
+
+        <div class="quick-actions d-none d-lg-flex align-items-center gap-2">
+            <a asp-area="Admin" asp-controller="Categories" asp-action="Create" class="chip-link">
+                <i class="mdi mdi-plus-circle-outline me-1"></i> Thêm chuyên mục
+            </a>
+            <a asp-area="Admin" asp-controller="Report" asp-action="Index" class="chip-link @(pendingReports > 0 ? "active" : "")">
+                <i class="mdi mdi-flag-outline me-1"></i> Báo cáo (@pendingReports)
+            </a>
+            <div class="chip-link muted">
+                <i class="mdi mdi-account-group-outline me-1"></i> Thành viên: @totalUsers
+            </div>
+        </div>
+
+        <ul class="navbar-nav navbar-nav-right align-items-center">
+            <li class="nav-item">
+                <a class="btn-icon" asp-area="Admin" asp-controller="Forums" asp-action="Index" title="Diễn đàn">
+                    <i class="mdi mdi-forum-outline"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="btn-icon" asp-area="Admin" asp-controller="Categories" asp-action="Index" title="Chuyên mục">
+                    <i class="mdi mdi-view-list-outline"></i>
+                </a>
+            </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="nav-profile-img">
-                        <img src="~/admin/assets/images/faces/face1.jpg" alt="image">
+                        <img src="~/images/default-avatar.png" alt="avatar">
                         <span class="availability-status online"></span>
                     </div>
                     <div class="nav-profile-text">
-                        <p class="mb-1 text-black">@User.Identity.Name</p>
+                        <p class="mb-1 text-black">@User.Identity?.Name</p>
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-cached me-2 text-success"></i> Activity Log
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
+                        <i class="mdi mdi-account-cog-outline me-2 text-primary"></i> Quản lý tài khoản
+                    </a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index" target="_blank">
+                        <i class="mdi mdi-open-in-new me-2 text-success"></i> Xem trang user
                     </a>
                     <div class="dropdown-divider"></div>
-                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <form class="form-inline" asp-area="Admin" asp-controller="Account" asp-action="Logout" method="post">
+                        @Html.AntiForgeryToken()
                         <button type="submit" class="dropdown-item">
-                            <i class="mdi mdi-logout me-2 text-primary"></i> Signout
+                            <i class="mdi mdi-logout me-2 text-danger"></i> Đăng xuất
                         </button>
                     </form>
                 </div>
             </li>
-            @* Thêm các mục khác như Messages, Notifications nếu cần *@
         </ul>
+
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
         </button>

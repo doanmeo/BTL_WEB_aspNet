@@ -1,4 +1,6 @@
-﻿using BlogWebsite.Models;
+﻿using System;
+using System.Linq;
+using BlogWebsite.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection; // Cần cái này để dùng IServiceProvider
@@ -30,6 +32,17 @@ namespace BlogWebsite.Data
             var adminEmail = "admin@gmail.com"; // Bạn có thể đổi email này
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
+            if (adminUser != null && !IsValidPasswordHash(adminUser.PasswordHash))
+            {
+                // Nếu mật khẩu đang lưu không hợp lệ (bị sửa tay...), reset lại về mặc định
+                await userManager.RemovePasswordAsync(adminUser);
+                var resetResult = await userManager.AddPasswordAsync(adminUser, "Admin@123");
+                if (!resetResult.Succeeded)
+                {
+                    throw new InvalidOperationException("Không thể khôi phục mật khẩu cho tài khoản admin mặc định.");
+                }
+            }
+
             if (adminUser == null)
             {
                 var newAdminUser = new AppUser
@@ -41,24 +54,32 @@ namespace BlogWebsite.Data
                 // Mật khẩu mặc định là Admin@123
                 var result = await userManager.CreateAsync(newAdminUser, "Admin@123");
 
-                if (result.Succeeded)
+                if (!result.Succeeded)
                 {
-                    await userManager.AddToRoleAsync(newAdminUser, "Admin");
-
-                    // Tạo UserProfile cho admin
-                    var userProfile = new UserProfile
-                    {
-                        UserId = newAdminUser.Id,
-                        DisplayName = "Administrator",
-                        AvatarUrl = "https://via.placeholder.com/150", // Thêm cái ảnh giả cho đẹp
-                        Bio = "Quản trị viên hệ thống",
-                    };
-                    context.UserProfiles.Add(userProfile);
-                    await context.SaveChangesAsync();
-
-                    // Gán lại adminUser để dùng ở phần dưới
-                    adminUser = newAdminUser;
+                    var reasons = string.Join("; ", result.Errors.Select(e => e.Description));
+                    throw new InvalidOperationException($"Không thể tạo tài khoản admin mặc định: {reasons}");
                 }
+
+                await userManager.AddToRoleAsync(newAdminUser, "Admin");
+
+                // Tạo UserProfile cho admin
+                var userProfile = new UserProfile
+                {
+                    UserId = newAdminUser.Id,
+                    DisplayName = "Administrator",
+                    AvatarUrl = "https://via.placeholder.com/150", // Thêm cái ảnh giả cho đẹp
+                    Bio = "Quản trị viên hệ thống",
+                };
+                context.UserProfiles.Add(userProfile);
+                await context.SaveChangesAsync();
+
+                // Gán lại adminUser để dùng ở phần dưới
+                adminUser = newAdminUser;
+            }
+
+            if (adminUser == null)
+            {
+                throw new InvalidOperationException("Không thể xác định tài khoản admin mặc định sau khi khởi tạo.");
             }
 
             // ==========================================
@@ -135,6 +156,21 @@ namespace BlogWebsite.Data
 
             // Lưu tất cả thay đổi
             await context.SaveChangesAsync();
+        }
+
+        private static bool IsValidPasswordHash(string? passwordHash)
+        {
+            if (string.IsNullOrWhiteSpace(passwordHash)) return false;
+
+            try
+            {
+                Convert.FromBase64String(passwordHash);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }
