@@ -120,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -200,8 +204,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/MyPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXE15UG9zdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/NewPosts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXE5ld1Bvc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/Watched.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXFdhdGNoZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/Thread/WhatsNew.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhyZWFkXFdoYXRzTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/source/repos/test/BTL_WEB_aspNet/Views/UserProfiles/Details.cshtml]

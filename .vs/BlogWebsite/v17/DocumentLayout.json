@@ -3,12 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\viewcomponents\\trendingpostsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:viewcomponents\\trendingpostsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\whatsnew.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\whatsnew.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\myposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\myposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\newposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\newposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\viewmodels\\threadviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\viewmodels\\threadviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\models\\viewmodels\\createthreadviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\viewmodels\\createthreadviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\data\\threadprefixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:data\\threadprefixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\email.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\email.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\resetpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\resetpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\viewcomponents\\trendingpostsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:viewcomponents\\trendingpostsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:models\\forum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:2:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:2:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -41,14 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\thread\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\views\\shared\\components\\forumselector\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -69,14 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E19FD01-7442-4F12-83A3-33DD2376C434}|BlogWebsite.csproj|c:\\users\\pc\\source\\repos\\test\\btl_web_aspnet\\areas\\identity\\pages\\account\\manage\\managenavpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,11 +174,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 40,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
@@ -175,20 +219,150 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TrendingPostsViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ViewComponents\\TrendingPostsViewComponent.cs",
-              "RelativeDocumentMoniker": "ViewComponents\\TrendingPostsViewComponent.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ViewComponents\\TrendingPostsViewComponent.cs",
-              "RelativeToolTip": "ViewComponents\\TrendingPostsViewComponent.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwCQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T06:07:43.222Z",
+              "DocumentIndex": 1,
+              "Title": "WhatsNew.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\WhatsNew.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\WhatsNew.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\WhatsNew.cshtml",
+              "RelativeToolTip": "Views\\Thread\\WhatsNew.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T08:11:06.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\Details.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Details.cshtml",
+              "RelativeToolTip": "Views\\Thread\\Details.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T08:05:59.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyPosts.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\MyPosts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\MyPosts.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\MyPosts.cshtml",
+              "RelativeToolTip": "Views\\Thread\\MyPosts.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T08:01:55.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NewPosts.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\NewPosts.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\NewPosts.cshtml",
+              "RelativeToolTip": "Views\\Thread\\NewPosts.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAMcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T07:33:06.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ThreadController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ThreadController.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Controllers\\ThreadController.cs",
+              "RelativeToolTip": "Controllers\\ThreadController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAiwJsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T07:36:24.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Thread\\Create.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
+              "RelativeToolTip": "Views\\Thread\\Create.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwJIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T03:22:01.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:57:43.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreateThreadViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\CreateThreadViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\CreateThreadViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\CreateThreadViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\CreateThreadViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T07:27:14.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ThreadPrefixes.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Data\\ThreadPrefixes.cs",
+              "RelativeDocumentMoniker": "Data\\ThreadPrefixes.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Data\\ThreadPrefixes.cs",
+              "RelativeToolTip": "Data\\ThreadPrefixes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T07:26:53.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Email.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T07:05:50.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T02:42:03.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ThreadViewModel.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\ViewModels\\ThreadViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\ThreadViewModel.cs",
@@ -201,19 +375,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T01:59:55.466Z"
+              "WhenOpened": "2025-11-21T02:00:27.219Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T07:05:54.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T07:05:21.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ResetPassword.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml.cs",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T07:05:21.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TrendingPostsViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ViewComponents\\TrendingPostsViewComponent.cs",
+              "RelativeDocumentMoniker": "ViewComponents\\TrendingPostsViewComponent.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ViewComponents\\TrendingPostsViewComponent.cs",
+              "RelativeToolTip": "ViewComponents\\TrendingPostsViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T06:07:43.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "DbSeeder.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Data\\DbSeeder.cs",
               "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
@@ -221,12 +448,11 @@
               "RelativeToolTip": "Data\\DbSeeder.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwC0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:55:54.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T02:55:54.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 20,
               "Title": "UserProfile.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\UserProfile.cs",
               "RelativeDocumentMoniker": "Models\\UserProfile.cs",
@@ -238,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -250,19 +476,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Thread\\Create.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Thread\\Create.cshtml",
-              "RelativeToolTip": "Views\\Thread\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T03:22:01.187Z"
+              "DocumentIndex": 14,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-21T02:32:31.186Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-21T01:59:55.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\Components\\ForumSelector\\Default.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Components\\ForumSelector\\Default.cshtml",
@@ -274,19 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T02:00:27.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "ForumSelectorViewComponent.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ViewComponents\\ForumSelectorViewComponent.cs",
               "RelativeDocumentMoniker": "ViewComponents\\ForumSelectorViewComponent.cs",
@@ -298,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
@@ -310,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -322,19 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAowDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:57:43.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 21,
               "Title": "Forum.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Models\\Forum.cs",
               "RelativeDocumentMoniker": "Models\\Forum.cs",
@@ -346,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -358,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -370,19 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAYwEwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-21T02:42:03.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "Logout.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
@@ -394,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "ManageNavPages.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
@@ -406,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "_ManageNav.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
@@ -418,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
@@ -430,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "BlogWebsite.csproj",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\BlogWebsite.csproj",
               "RelativeDocumentMoniker": "BlogWebsite.csproj",
@@ -442,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\UserProfiles\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\UserProfiles\\Details.cshtml",
@@ -454,19 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ScaffoldingReadMe.txt",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ScaffoldingReadMe.txt",
-              "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\ScaffoldingReadMe.txt",
-              "RelativeToolTip": "ScaffoldingReadMe.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-21T02:32:31.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -478,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -490,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -502,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 37,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -514,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
               "Title": "20251101084055_update_db.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\test\\BTL_WEB_aspNet\\Migrations\\20251101084055_update_db.cs",
               "RelativeDocumentMoniker": "Migrations\\20251101084055_update_db.cs",

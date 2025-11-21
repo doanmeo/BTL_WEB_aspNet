@@ -15,6 +15,7 @@ namespace BlogWebsite.Models
         public DbSet<Like> Likes { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<WatchedThread> WatchedThreads { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

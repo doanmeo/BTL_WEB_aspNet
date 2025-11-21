@@ -1,0 +1,27 @@
+@model IEnumerable<BlogWebsite.Models.Thread>
+
+@{
+    ViewData["Title"] = "Watched Threads";
+}
+
+<div class="container my-3">
+    <h2 class="fw-normal mb-3">Watched Threads</h2>
+
+    <div class="card border shadow-sm">
+        <div class="list-group list-group-flush">
+            @if (Model.Any())
+            {
+                @foreach (var thread in Model)
+                {
+                    @await Html.PartialAsync("_ThreadItemPartial", thread)
+                }
+            }
+            else
+            {
+                <div class="list-group-item p-5 text-center">
+                    <p class="text-muted">You are not watching any threads yet.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

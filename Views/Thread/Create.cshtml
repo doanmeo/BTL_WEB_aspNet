@@ -1,4 +1,5 @@
 ﻿@model BlogWebsite.Models.ViewModels.CreateThreadViewModel
+@using BlogWebsite.Data
 
 @{
     ViewData["Title"] = "Create new thread";
@@ -21,8 +22,54 @@
         <input type="hidden" asp-for="ForumName" />
 
         <div class="mb-3">
-            <label asp-for="Title" class="form-label fw-bold">Title</label>
-            <input asp-for="Title" class="form-control" placeholder="Enter a descriptive title..." />
+            <label class="form-label fw-bold">Select Title</label>
+
+            <div class="dropdown w-100">
+                <button class="btn btn-white border w-100 text-start d-flex justify-content-between align-items-center"
+                        type="button" id="titleDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="height: 45px;">
+                    <span id="selectedTitleText" class="text-muted">Select a title...</span>
+                    <i class="fa-solid fa-chevron-down small text-muted"></i>
+                </button>
+
+                <div class="dropdown-menu w-100 p-2 shadow" aria-labelledby="titleDropdownBtn" style="max-height: 300px; overflow-y: auto;">
+
+                    <div class="px-2 pb-2 border-bottom sticky-top bg-white">
+                        <input type="text" class="form-control form-control-sm" id="titleSearchInput" placeholder="Type to search title..." autofocus>
+                    </div>
+
+                    <div id="titleListOptions" class="mt-2">
+                        @foreach (var title in ThreadPrefixes.Titles)
+                        {
+                            <a class="dropdown-item title-option py-2 rounded" href="#" data-value="@title">
+                                @if (title == "Báo lỗi")
+                                {
+                                    <i class="fa-solid fa-bug text-danger me-2"></i>
+                                }
+                                else if (title == "Tin tức")
+                                {
+
+                                    <i class="fa-solid fa-newspaper text-info me-2"></i>
+                                }
+                                else if (title == "Góp ý")
+                                {
+
+                                    <i class="fa-solid fa-comments text-success me-2"></i>
+                                }
+                                else
+                                {
+
+                                    <i class="fa-solid fa-tag text-muted me-2"></i>
+                                }
+
+                                @title
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="Title" id="realTitleInput" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
@@ -49,4 +96,52 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- LOGIC CHO DROPDOWN TIÊU ĐỀ ---
+            const titleBtn = document.getElementById('titleDropdownBtn');
+            const titleText = document.getElementById('selectedTitleText');
+            const titleInput = document.getElementById('realTitleInput');
+            const searchInput = document.getElementById('titleSearchInput');
+            const options = document.querySelectorAll('.title-option');
+
+            // 1. Xử lý khi bấm chọn một mục
+            options.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const value = this.getAttribute('data-value');
+                    const htmlContent = this.innerHTML;
+
+                    // Cập nhật giao diện nút bấm
+                    titleText.innerHTML = htmlContent;
+                    titleText.classList.remove("text-muted");
+                    titleText.classList.add("fw-bold", "text-dark");
+
+                    // Cập nhật giá trị vào input ẩn để gửi đi
+                    titleInput.value = value;
+                });
+            });
+
+            // 2. Xử lý tìm kiếm
+            searchInput.addEventListener('keyup', function() {
+                const filter = this.value.toLowerCase();
+
+                options.forEach(option => {
+                    const text = option.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        option.style.display = "";
+                    } else {
+                        option.style.display = "none";
+                    }
+                });
+            });
+
+            // 3. Focus ô tìm kiếm khi mở menu
+            titleBtn.addEventListener('shown.bs.dropdown', function () {
+                searchInput.focus();
+            });
+        });
+    </script>
 }
