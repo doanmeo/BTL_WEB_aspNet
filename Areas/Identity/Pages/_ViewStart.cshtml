@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@using Microsoft.Extensions.Options
+
+@inject IHtmlHelper<dynamic> HtmlHelper
+@inject IOptions<Microsoft.AspNetCore.Mvc.MvcOptions> MvcOptions
+
+@{
+    Layout = "_Layout"; // Identity thường tìm _Layout.cshtml trong Views/Shared
+}

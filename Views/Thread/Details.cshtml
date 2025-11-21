@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-md-2 text-center border-right">
                             @* Thông tin người dùng bên trái *@
-                            <img src="@(string.IsNullOrEmpty(post.AppUser.UserProfile?.AvatarUrl) ? "/images/default-avatar.png" : post.AppUser.UserProfile.AvatarUrl)"
+                            <img src="@(string.IsNullOrEmpty(post.AppUser.UserProfile?.AvatarUrl) ? "~/images/default-avatar.png" : post.AppUser.UserProfile.AvatarUrl)"
                                  alt="Avatar" class="img-thumbnail rounded-circle mb-2" style="width: 80px; height: 80px; object-fit: cover;" />
                             <h5 class="mb-0"><a asp-controller="UserProfiles" asp-action="Details" asp-route-id="@post.AppUserId">@post.AppUser.UserName</a></h5>
                             <small class="text-muted">Joined: @(post.AppUser.UserProfile?.JoinedAt.ToShortDateString() ?? "N/A")</small><br />
@@ -42,7 +42,7 @@
                             <div class="d-flex justify-content-between">
                                 <small class="text-muted">Posted: @post.CreatedAt.ToString("g")</small>
                                 <div>
-                                    @* Nút Like - Người 3 sẽ triển khai AJAX *@
+                                    @* Nút Like - Người 3 đã triển khai AJAX *@
                                     <button class="btn btn-sm btn-outline-primary like-button" data-post-id="@post.PostId">
                                         <i class="bi bi-heart"></i> Like (<span class="like-count">0</span>)
                                     </button>
@@ -69,7 +69,7 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-            @* Partial View cho form trả lời nhanh - Người 2 sẽ triển khai *@
+            @* Partial View cho form trả lời nhanh - Người 2 đã triển khai *@
             <div class="card mt-4">
                 <div class="card-header">Quick Reply</div>
                 <div class="card-body">
@@ -112,3 +112,8 @@
         <a asp-controller="Forum" asp-action="Details" asp-route-id="@Model.ForumId" class="btn btn-secondary">Back to Forum</a>
     </div>
 </div>
+
+@* Nhúng Report Modal Partial View vào đây *@
+@* @await Html.PartialAsync("_ReportModalPartial") *@
+@await Html.PartialAsync("_ReportModalPartial", new BlogWebsite.Models.ViewModels.ReportViewModel())
+

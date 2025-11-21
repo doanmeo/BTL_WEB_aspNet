@@ -1,0 +1,45 @@
+﻿@model List<BlogWebsite.Areas.Admin.ViewComponents.AdminMenuItem>
+
+@* File này chứa HTML cho thanh điều hướng BÊN TRÁI (SIDEBAR) của trang Admin *@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                    <img src="~/images/faces/face1.jpg" alt="profile"> @* Đường dẫn ảnh trong wwwroot *@
+                    <span class="login-status online"></span>
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                    <span class="font-weight-bold mb-2">@User.Identity.Name</span>
+                    <span class="text-secondary text-small">Administrator</span>
+                </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+        </li>
+
+        @foreach (var item in Model)
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-area="@item.Area" asp-controller="@item.Controller" asp-action="@item.Action">
+                    <span class="menu-title">@item.Name</span>
+                    <i class="@item.IconCssClass menu-icon"></i>
+                </a>
+            </li>
+        }
+
+        @* Các mục menu khác như ui-basic (nếu có dropdown) *@
+        @* <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">UI Elements</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                </ul>
+            </div>
+        </li> *@
+    </ul>
+</nav>

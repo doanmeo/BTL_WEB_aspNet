@@ -169,7 +169,6 @@ D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.bui
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.development.json
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\BlogWebs.AA08B81A.Up2Date
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\BlogWebsite.dll
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\refint\BlogWebsite.dll
@@ -604,3 +603,4 @@ D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\bin\Debug\net8.0\Microsoft.Extension
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\BlogWebsite.MvcApplicationPartsAssemblyInfo.cs
+D:\NetCore_MVC\NetCore-web-mvc-\BlogWebsite\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

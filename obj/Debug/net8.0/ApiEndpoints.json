@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "ContainingType": "BlogWebsite.Controllers.LikeController",
+    "Method": "GetLikeCount",
+    "RelativePath": "api/Like/GetLikeCount/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogWebsite.Controllers.LikeController",
+    "Method": "ToggleLike",
+    "RelativePath": "api/Like/ToggleLike",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

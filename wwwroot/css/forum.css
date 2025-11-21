@@ -1,0 +1,148 @@
+﻿/* --- forum.css --- */
+
+/* Common overrides for Bootstrap in forum context */
+body {
+    background-color: #f0f2f5; /* Màu nền nhẹ nhàng, giống Voz */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Font chữ phổ biến */
+}
+
+/* Navbar Customization (kế thừa từ _Layout.cshtml) */
+.navbar.bg-dark {
+    background-color: #212529 !important; /* Màu đen đậm hơn */
+}
+
+.navbar-brand, .nav-link {
+    color: #e9ecef !important; /* Màu chữ sáng */
+}
+
+    .navbar-brand:hover, .nav-link:hover {
+        color: #fff !important; /* Hiệu ứng hover */
+    }
+
+.form-control.me-2 {
+    background-color: #343a40; /* Nền tối cho input tìm kiếm */
+    border-color: #495057;
+    color: #e9ecef;
+}
+
+    .form-control.me-2::placeholder {
+        color: #adb5bd; /* Màu placeholder */
+    }
+
+.btn-outline-light {
+    color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+    .btn-outline-light:hover {
+        background-color: #e9ecef;
+        color: #212529;
+    }
+
+/* Footer Customization */
+.footer.bg-dark {
+    background-color: #212529 !important;
+    color: #e9ecef !important;
+}
+
+    .footer.bg-dark a {
+        color: #e9ecef !important;
+    }
+
+        .footer.bg-dark a:hover {
+            color: #fff !important;
+        }
+
+/* --- Home Page (Category and Forum list) Styling --- */
+.card-header.bg-primary {
+    background-color: #007bff !important; /* Màu xanh primary của Bootstrap */
+    border-bottom: 2px solid #0056b3; /* Đường viền đậm hơn */
+}
+
+.card-header h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #f8f9fa; /* Màu nền xen kẽ */
+}
+
+.table-hover > tbody > tr:hover > * {
+    background-color: #e2e6ea; /* Hiệu ứng hover */
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+.table thead.thead-light th {
+    background-color: #e9ecef;
+    color: #495057;
+    border-color: #dee2e6;
+}
+
+/* --- Thread Details Page Styling --- */
+.post-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    background-color: #fff;
+}
+
+    .post-card .card-body {
+        padding: 1rem;
+    }
+
+    .post-card .col-md-2.border-right {
+        border-right: 1px solid #dee2e6;
+        padding-right: 1rem;
+        padding-left: 0.5rem;
+    }
+
+.post-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Giữ định dạng khoảng trắng và xuống dòng */
+}
+
+.img-thumbnail.rounded-circle {
+    border: 1px solid #adb5bd;
+}
+
+.like-button, .report-button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    margin-left: 0.5rem;
+}
+
+    .like-button i, .report-button i {
+        margin-right: 0.25rem;
+    }
+
+/* Adjustments for breadcrumbs */
+.breadcrumb {
+    background-color: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Form for quick reply/new thread */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+}
