@@ -22,18 +22,23 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IUserStore<AppUser> _userStore;
+        private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly BlogWebsite.Models.ApplicationDbContext _context;
 
         public RegisterModel(
             UserManager<AppUser> userManager,
+            IUserStore<AppUser> userStore,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             BlogWebsite.Models.ApplicationDbContext context)
         {
             _userManager = userManager;
+            _userStore = userStore;
+            _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
@@ -49,6 +54,13 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            // --- THÊM MỚI: USERNAME ---
+            [Required]
+            [Display(Name = "Username")]
+            [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
+            public string Username { get; set; }
+            // --------------------------
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -78,7 +90,12 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = Input.Email, Email = Input.Email };
+                var user = CreateUser();
+
+                // Cập nhật Username và Email riêng biệt
+                await _userStore.SetUserNameAsync(user, Input.Username, CancellationToken.None);
+                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
@@ -90,24 +107,24 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
                     var userProfile = new UserProfile
                     {
                         UserId = user.Id,
-                        DisplayName = user.UserName,
+                        DisplayName = Input.Username, // Dùng Username làm tên hiển thị ban đầu
                         JoinedAt = DateTime.UtcNow,
                         Reputation = 0,
                         AvatarUrl = "/images/default-avatar.png",
-                        Bio = "" // SỬA LỖI: Thêm giá trị mặc định cho Bio
+                        Bio = ""
                     };
                     _context.UserProfiles.Add(userProfile);
                     await _context.SaveChangesAsync();
 
+                    var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    // Giả lập IEmailSender nếu bạn chưa cấu hình
                     // await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                     //     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
@@ -128,6 +145,29 @@ namespace BlogWebsite.Areas.Identity.Pages.Account
             }
 
             return Page();
+        }
+
+        private AppUser CreateUser()
+        {
+            try
+            {
+                return Activator.CreateInstance<AppUser>();
+            }
+            catch
+            {
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(AppUser)}'. " +
+                    $"Ensure that '{nameof(AppUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+            }
+        }
+
+        private IUserEmailStore<AppUser> GetEmailStore()
+        {
+            if (!_userManager.SupportsUserEmail)
+            {
+                throw new NotSupportedException("The default UI requires a user store with email support.");
+            }
+            return (IUserEmailStore<AppUser>)_userStore;
         }
     }
 }
