@@ -16,7 +16,7 @@
 </div>
 
 <div class="galaxy-panel floating form-card">
-    <form asp-action="Edit">
+    <form asp-action="Edit" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="CategoryId" />
         <div class="form-group mb-3">

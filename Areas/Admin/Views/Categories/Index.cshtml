@@ -1,9 +1,9 @@
 ﻿@using System.Linq
-@model IEnumerable<BlogWebsite.Models.Category>
+@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Category>
 @{
     Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
     ViewData["Title"] = "Quản lý chuyên mục";
-    var activeCount = Model.Count(c => !c.IsDeleted);
+    var activeCount = (int)(ViewBag.ActiveCategoryCount ?? Model.TotalCount);
 }
 
 <div class="page-header d-flex justify-content-between align-items-center">
@@ -26,7 +26,7 @@
     <div class="col-sm-6 col-lg-3">
         <div class="galaxy-card floating">
             <div class="icon-badge"><i class="mdi mdi-format-list-bulleted"></i></div>
-            <p class="metric">@Model.Count()</p>
+            <p class="metric">@Model.TotalCount</p>
             <span>Tổng số chuyên mục</span>
         </div>
     </div>
@@ -51,7 +51,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Items)
             {
                 var forumCount = item.Forums?.Count ?? 0;
                 <tr>
@@ -85,3 +85,23 @@
         </tbody>
     </table>
 </div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Category pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex - 1)">Trước</a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex + 1)">Sau</a>
+            </li>
+        </ul>
+    </nav>
+}

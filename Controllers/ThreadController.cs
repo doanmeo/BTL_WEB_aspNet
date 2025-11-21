@@ -26,26 +26,37 @@ namespace BlogWebsite.Controllers
         }
 
         // GET: Thread/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int page = 1)
         {
             if (id == null) return NotFound();
 
             var thread = await _context.Threads
-                .Include(t => t.Forum) // Lấy thông tin Forum để hiển thị breadcrumb
-                .Include(t => t.Posts)
-                    .ThenInclude(p => p.AppUser)
-                    .ThenInclude(au => au.UserProfile)
+                .Include(t => t.Forum)
+                .Include(t => t.AppUser)
+                    .ThenInclude(u => u.UserProfile)
                 .FirstOrDefaultAsync(m => m.ThreadId == id && !m.IsDeleted);
 
             if (thread == null) return NotFound();
-
-            thread.Posts = thread.Posts.Where(p => !p.IsDeleted).OrderBy(p => p.CreatedAt).ToList();
 
             thread.ViewCount++;
             _context.Update(thread);
             await _context.SaveChangesAsync();
 
-            return View(thread);
+            var postsQuery = _context.Posts
+                .Where(p => p.ThreadId == thread.ThreadId && !p.IsDeleted)
+                .Include(p => p.AppUser)
+                    .ThenInclude(u => u.UserProfile)
+                .OrderBy(p => p.CreatedAt);
+
+            var pagedPosts = await PagedResult<Post>.CreateAsync(postsQuery, page, 10);
+
+            var viewModel = new ThreadDetailsViewModel
+            {
+                Thread = thread,
+                Posts = pagedPosts
+            };
+
+            return View(viewModel);
         }
 
         // GET: Hiển thị form đăng bài
@@ -88,14 +99,13 @@ namespace BlogWebsite.Controllers
                 _context.Threads.Add(thread);
                 await _context.SaveChangesAsync();
 
-                // BƯỚC 2: TẠO POST ĐẦU TIÊN (Lưu Nội dung)
-                // Chuyển đổi xuống dòng (\n) thành thẻ <br> nếu dùng textarea thường
-                string contentSafe = model.Content.Replace("\n", "<br>");
+                // BƯỚC 2: TẠO POST ĐẦU TIÊN (Lưu Nội dung HTML từ trình soạn thảo)
+                var contentSafe = model.Content?.Trim() ?? string.Empty;
 
                 var post = new Post
                 {
                     ThreadId = thread.ThreadId, // <--- Gắn vào Thread vừa tạo ở trên
-                    Content = contentSafe,      // <--- Nội dung vào đây
+                    Content = contentSafe,      // <--- Nội dung HTML từ Quill
                     AppUserId = userId,
                     CreatedAt = DateTime.Now,
                     IsDeleted = false
@@ -113,19 +123,17 @@ namespace BlogWebsite.Controllers
         }
         // GET: /Thread/NewPosts
         [HttpGet]
-        public async Task<IActionResult> NewPosts()
+        public async Task<IActionResult> NewPosts(int page = 1)
         {
-            // Lấy 20 bài viết mới nhất (Sắp xếp theo ngày tạo giảm dần)
-            var threads = await _context.Threads
-                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile) // Lấy thông tin người tạo (Avatar)
-                .Include(t => t.Forum) // Lấy tên Forum (để hiện badge)
-                .Include(t => t.Posts) // Để đếm số replies
+            var query = _context.Threads
+                .Include(t => t.AppUser).ThenInclude(u => u.UserProfile)
+                .Include(t => t.Forum)
+                .Include(t => t.Posts)
                 .Where(t => !t.IsDeleted)
-                .OrderByDescending(t => t.CreatedAt) // Quan trọng: Mới nhất lên đầu
-                .Take(20) // Lấy 20 bài mỗi trang
-                .ToListAsync();
+                .OrderByDescending(t => t.CreatedAt);
 
-            return View(threads);
+            var pagedThreads = await PagedResult<Thread>.CreateAsync(query, page, 20);
+            return View(pagedThreads);
         }
     }
 }

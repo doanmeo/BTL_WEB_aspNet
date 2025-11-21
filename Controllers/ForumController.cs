@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlogWebsite.Models;
+using BlogWebsite.Models.ViewModels;
+using ThreadEntity = BlogWebsite.Models.Thread;
 
 namespace BlogWebsite.Controllers
 {
@@ -16,16 +18,15 @@ namespace BlogWebsite.Controllers
         }
 
         // GET: Forum/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int page = 1)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            // Tìm forum theo id, đồng thời tải kèm danh sách các thread con
             var forum = await _context.Forums
-                .Include(f => f.Threads)
+                .Include(f => f.Category)
                 .FirstOrDefaultAsync(m => m.ForumId == id && !m.IsDeleted);
 
             if (forum == null)
@@ -33,10 +34,19 @@ namespace BlogWebsite.Controllers
                 return NotFound();
             }
 
-            // Lọc các thread đã bị xóa mềm và sắp xếp
-            forum.Threads = forum.Threads.Where(t => !t.IsDeleted).OrderByDescending(t => t.UpdatedAt).ToList();
+            var threadsQuery = _context.Threads
+                .Where(t => t.ForumId == forum.ForumId && !t.IsDeleted)
+                .OrderByDescending(t => t.UpdatedAt ?? t.CreatedAt);
 
-            return View(forum);
+            var pagedThreads = await PagedResult<ThreadEntity>.CreateAsync(threadsQuery, page, 12);
+
+            var viewModel = new ForumDetailsViewModel
+            {
+                Forum = forum,
+                Threads = pagedThreads
+            };
+
+            return View(viewModel);
         }
     }
 }

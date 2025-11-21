@@ -1,0 +1,48 @@
+@model BlogWebsite.Models.Forum
+@{
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Xóa diễn đàn";
+}
+
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <p class="eyebrow text-danger">Ẩn/Xóa diễn đàn</p>
+        <h2 class="text-galaxy">@Model.Name</h2>
+        <p>Diễn đàn sẽ bị ẩn khỏi người dùng nhưng dữ liệu vẫn được giữ lại.</p>
+    </div>
+    <a asp-action="Details" asp-route-id="@Model.ForumId" class="btn btn-outline-galaxy">
+        <i class="mdi mdi-arrow-left me-1"></i> Quay lại
+    </a>
+</div>
+
+<div class="galaxy-panel floating detail-card">
+    <dl class="detail-list">
+        <div class="detail-item">
+            <dt>Chuyên mục</dt>
+            <dd>@Model.Category?.Name</dd>
+        </div>
+        <div class="detail-item">
+            <dt>Mô tả</dt>
+            <dd>@(string.IsNullOrWhiteSpace(Model.Description) ? "Chưa cập nhật" : Model.Description)</dd>
+        </div>
+        <div class="detail-item">
+            <dt>Quản trị viên</dt>
+            <dd>@Model.AppUser?.UserName ?? "N/A"</dd>
+        </div>
+    </dl>
+
+    <form asp-action="Delete" method="post" class="mt-4">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="ForumId" />
+        <div class="alert alert-warning bg-transparent text-warning border-0 mb-3">
+            <i class="mdi mdi-alert me-2"></i> Bạn chắc chắn muốn ẩn diễn đàn này?
+        </div>
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-danger-galaxy">
+                <i class="mdi mdi-eye-off-outline me-1"></i> Ẩn diễn đàn
+            </button>
+            <a asp-action="Details" asp-route-id="@Model.ForumId" class="btn btn-outline-galaxy">Hủy</a>
+        </div>
+    </form>
+</div>
+

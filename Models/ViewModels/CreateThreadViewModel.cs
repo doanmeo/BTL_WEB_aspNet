@@ -14,7 +14,7 @@ namespace BlogWebsite.Models.ViewModels
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Content for the first post is required.")]
-        [StringLength(20000, MinimumLength = 10, ErrorMessage = "Content must be between 10 and 20,000 characters.")]
+        [StringLength(60000, MinimumLength = 10, ErrorMessage = "Content must be between 10 and 60,000 characters.")]
         public string Content { get; set; }
         
     }

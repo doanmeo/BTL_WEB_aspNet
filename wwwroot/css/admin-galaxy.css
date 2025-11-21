@@ -1,8 +1,7 @@
 :root {
-    --galaxy-bg: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.4), transparent 50%),
-        radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.45), transparent 55%),
-        #050816;
-    --galaxy-card: rgba(13, 17, 32, 0.8);
+    --galaxy-bg: #f5f2fb;
+    --galaxy-panel: #1e223f;
+    --galaxy-card: #212642;
     --galaxy-border: rgba(255, 255, 255, 0.08);
     --galaxy-accent: #a855f7;
     --galaxy-blue: #38bdf8;
@@ -11,7 +10,11 @@
 
 body {
     background: var(--galaxy-bg);
-    color: #f1f5f9;
+    color: #1f2233;
+}
+
+.content-wrapper {
+    background: transparent;
 }
 
 .galaxy-hero {
@@ -81,7 +84,10 @@ body {
     padding: .6rem 1.6rem;
 }
 
-.text-galaxy { color: #e2e8f0; }
+.text-galaxy {
+    color: #1e1f39;
+    font-weight: 600;
+}
 .stats-grid { margin-top: 1.5rem; }
 
 .galaxy-card {
@@ -91,6 +97,7 @@ body {
     padding: 1.5rem;
     backdrop-filter: blur(10px);
     min-height: 180px;
+    color: #f8fafc;
 }
 
 .galaxy-card .metric {
@@ -118,10 +125,11 @@ body {
 }
 
 .galaxy-panel {
-    background: var(--galaxy-card);
+    background: var(--galaxy-panel);
     border-radius: 20px;
     padding: 1.5rem;
     border: 1px solid var(--galaxy-border);
+    color: #f8fafc;
 }
 
 .panel-head {
@@ -191,10 +199,11 @@ body {
 .floating-orb.medium { width: 140px; height: 140px; }
 
 .galaxy-table-wrapper {
-    background: var(--galaxy-card);
+    background: var(--galaxy-panel);
     border-radius: 20px;
     border: 1px solid var(--galaxy-border);
     padding: 1rem;
+    color: #f8fafc;
 }
 
 .galaxy-table {
@@ -202,7 +211,7 @@ body {
 }
 
 .galaxy-table thead {
-    color: #94a3b8;
+    color: #cbd5f5;
     text-transform: uppercase;
     letter-spacing: .08em;
     font-size: .8rem;
@@ -284,6 +293,7 @@ body {
 .chip-link.muted {
     cursor: default;
     border-color: var(--galaxy-border);
+    color: #94a3b8;
 }
 
 .btn-icon {
@@ -360,7 +370,7 @@ body {
 .detail-item dd {
     margin-bottom: 0;
     font-size: 1.1rem;
-    color: #e2e8f0;
+    color: #f8fafc;
 }
 
 .btn-danger-galaxy {

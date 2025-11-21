@@ -1,41 +1,40 @@
 ﻿@model BlogWebsite.Models.Category
-
 @{
-    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
+    ViewData["Title"] = "Tạo chuyên mục";
 }
 
-<h1>Create</h1>
-
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <p class="eyebrow">Tạo mới</p>
+        <h2 class="text-galaxy">Chuyên mục diễn đàn</h2>
+        <p>Khởi tạo hành tinh thảo luận mới trong Voz Galaxy.</p>
     </div>
+    <a asp-action="Index" class="btn btn-outline-galaxy">
+        <i class="mdi mdi-arrow-left me-1"></i> Quay lại danh sách
+    </a>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="galaxy-panel floating form-card">
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-gradient">
+                <i class="mdi mdi-plus-circle-outline me-1"></i> Tạo chuyên mục
+            </button>
+            <a asp-action="Index" class="btn btn-outline-galaxy">Hủy</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {

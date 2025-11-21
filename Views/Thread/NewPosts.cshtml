@@ -1,4 +1,4 @@
-﻿@model List<BlogWebsite.Models.Thread>
+﻿@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Thread>
 @{
     ViewData["Title"] = "New posts";
 }
@@ -41,11 +41,14 @@
 
     <div class="d-flex justify-content-between align-items-center mb-2 bg-light p-2 rounded border">
         <div>
-            <a href="#" class="btn btn-sm btn-white border active">1</a>
-            <a href="#" class="btn btn-sm btn-white border">2</a>
-            <a href="#" class="btn btn-sm btn-white border">3</a>
-            <span class="mx-1 text-muted">...</span>
-            <a href="#" class="btn btn-sm btn-white border">Next</a>
+            <div class="btn-group" role="group">
+                <a class="btn btn-sm btn-white border @(Model.HasPreviousPage ? "" : "disabled")" asp-route-page="@(Model.PageIndex - 1)">Prev</a>
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    <a class="btn btn-sm btn-white border @(i == Model.PageIndex ? "active" : "")" asp-route-page="@i">@i</a>
+                }
+                <a class="btn btn-sm btn-white border @(Model.HasNextPage ? "" : "disabled")" asp-route-page="@(Model.PageIndex + 1)">Next</a>
+            </div>
         </div>
         <div class="small text-muted">
             <a href="#" class="text-decoration-none text-muted me-2">Filters <i class="fa-solid fa-caret-down"></i></a>
@@ -54,7 +57,7 @@
 
     <div class="card border shadow-sm">
         <div class="list-group list-group-flush">
-            @foreach (var thread in Model)
+            @foreach (var thread in Model.Items)
             {
                 @await Html.PartialAsync("_ThreadItemPartial", thread, new ViewDataDictionary(ViewData) { { "DisplayMode", "full" } })
             }

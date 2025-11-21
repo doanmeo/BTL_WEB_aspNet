@@ -1,7 +1,29 @@
 ﻿@model BlogWebsite.Models.ViewModels.CreateThreadViewModel
+@using System.Text.Json
 
 @{
     ViewData["Title"] = "Create new thread";
+    var initialContent = JsonSerializer.Serialize(Model.Content ?? "<p><br></p>");
+}
+
+@section Styles{
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet" />
+    <style>
+        .quill-wrapper {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .quill-wrapper .ql-toolbar {
+            background: #f8fafc;
+        }
+
+        .quill-wrapper .ql-container {
+            min-height: 260px;
+            font-size: 1rem;
+        }
+    </style>
 }
 
 <div class="container py-4">
@@ -14,7 +36,7 @@
 
     <h2 class="mb-4">Post thread in: <span class="text-primary">@Model.ForumName</span></h2>
 
-    <form asp-action="Create" method="post">
+    <form asp-action="Create" method="post" id="threadForm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <input type="hidden" asp-for="ForumId" />
@@ -28,13 +50,13 @@
 
         <div class="mb-3">
             <label asp-for="Content" class="form-label fw-bold">Content</label>
-
-            @* Tạm thời tắt tính năng chèn ảnh, chỉ dùng textarea thuần *@
-            <textarea asp-for="Content" id="threadEditor" class="form-control" rows="10" placeholder="Viết nội dung tại đây..."></textarea>
+            <input type="hidden" asp-for="Content" id="threadContent" />
+            <div class="quill-wrapper">
+                <div id="threadEditor"></div>
+            </div>
             <span asp-validation-for="Content" class="text-danger"></span>
-
             <div class="form-text text-muted small mt-1">
-                * Hiện tại chỉ hỗ trợ đăng bài dạng văn bản. Tính năng chèn ảnh sẽ được bật lại sau.
+                Bạn có thể chèn ảnh (URL), ký tự đặc biệt và định dạng văn bản trực tiếp trong trình soạn thảo.
             </div>
         </div>
 
@@ -46,7 +68,49 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toolbarOptions = [
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'header': 1 }, { 'header': 2 }],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                [{ 'indent': '-1' }, { 'indent': '+1' }],
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+                [{ 'color': [] }, { 'background': [] }],
+                [{ 'align': [] }],
+                ['blockquote', 'code-block', 'link', 'image', 'video'],
+                ['clean']
+            ];
+
+            const threadQuill = new Quill('#threadEditor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: {
+                        container: toolbarOptions,
+                        handlers: {
+                            'image': function () {
+                                const range = this.quill.getSelection();
+                                const url = prompt('Nhập URL hình ảnh:');
+                                if (url) {
+                                    this.quill.insertEmbed(range.index, 'image', url, Quill.sources.USER);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const initialContent = @Html.Raw(initialContent);
+            if (initialContent) {
+                threadQuill.clipboard.dangerouslyPasteHTML(initialContent);
+            }
+
+            document.getElementById('threadForm').addEventListener('submit', function () {
+                const html = threadQuill.root.innerHTML;
+                document.getElementById('threadContent').value = html;
+            });
+        });
+    </script>
 }

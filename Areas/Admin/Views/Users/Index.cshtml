@@ -1,4 +1,4 @@
-@model IEnumerable<BlogWebsite.Models.AppUser>
+@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.AppUser>
 @{
     Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
     ViewData["Title"] = "Quản lý người dùng";
@@ -20,11 +20,12 @@
                 <th>Hồ sơ</th>
                 <th>Email</th>
                 <th>Liên hệ</th>
-                <th class="text-end">Trạng thái</th>
+                <th>Trạng thái</th>
+                <th class="text-end">Thao tác</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model)
+            @foreach (var user in Model.Items)
             {
                 <tr>
                     <td>
@@ -32,24 +33,57 @@
                             <img src="@(user.UserProfile?.AvatarUrl ?? "/images/default-avatar.png")" class="avatar-sm me-3" alt="@user.UserName" />
                             <div>
                                 <div class="fw-semibold">@user.UserName</div>
-                                <small class="text-muted">@user.UserProfile?.DisplayName ?? "Chưa cập nhật"</small>
+                                <small class="text-muted">@(user.UserProfile?.DisplayName ?? "Chưa cập nhật")</small>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <div class="d-flex flex-column">
-                            <span>@user.Email</span>
-                            <small class="text-muted">@user.PhoneNumber</small>
-                        </div>
+                        <span>@user.Email</span>
                     </td>
-                    <td class="text-end">
+                    <td>
+                        <span class="text-muted">@(string.IsNullOrWhiteSpace(user.PhoneNumber) ? "—" : user.PhoneNumber)</span>
+                    </td>
+                    <td>
                         <span class="status-chip @(user.EmailConfirmed ? "online" : "offline")">
                             @(user.EmailConfirmed ? "Đã xác thực" : "Chưa xác thực")
                         </span>
+                    </td>
+                    <td class="text-end">
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="Details" asp-route-id="@user.Id" class="btn-icon" title="Xem">
+                                <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@user.Id" class="btn-icon" title="Sửa">
+                                <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@user.Id" class="btn-icon danger" title="Xóa">
+                                <i class="mdi mdi-delete-outline"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Users pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex - 1)">Trước</a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex + 1)">Sau</a>
+            </li>
+        </ul>
+    </nav>
+}
 

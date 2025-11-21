@@ -1,7 +1,7 @@
-﻿@model BlogWebsite.Models.Forum
+﻿@model BlogWebsite.Models.ViewModels.ForumDetailsViewModel
 
 @{
-    ViewData["Title"] = @Model.Name;
+    ViewData["Title"] = @Model.Forum.Name;
 }
 
 <div class="container">
@@ -10,27 +10,27 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.Forum.Name</li>
                 </ol>
             </nav>
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>@Model.Name</h2>
+                <h2>@Model.Forum.Name</h2>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <a asp-controller="Thread" asp-action="Create" asp-route-forumId="@Model.ForumId" class="btn btn-primary">
+                    <a asp-controller="Thread" asp-action="Create" asp-route-forumId="@Model.Forum.ForumId" class="btn btn-primary">
                         New Thread
                     </a>
                 }
             </div>
-            <p>@Model.Description</p>
+            <p>@Model.Forum.Description</p>
             <hr />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            @if (Model.Threads != null && Model.Threads.Any())
+            @if (Model.Threads.Items.Any())
             {
                 <table class="table table-striped table-hover">
                     <thead class="thead-light">
@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var thread in Model.Threads)
+                        @foreach (var thread in Model.Threads.Items)
                         {
                             <tr>
                                 <td>
@@ -75,4 +75,24 @@
             }
         </div>
     </div>
+
+    @if (Model.Threads.TotalPages > 1)
+    {
+        <nav aria-label="Thread navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(Model.Threads.HasPreviousPage ? "" : "disabled")">
+                    <a class="page-link" asp-route-id="@Model.Forum.ForumId" asp-route-page="@(Model.Threads.PageIndex - 1)">Previous</a>
+                </li>
+                @for (int i = 1; i <= Model.Threads.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.Threads.PageIndex ? "active" : "")">
+                        <a class="page-link" asp-route-id="@Model.Forum.ForumId" asp-route-page="@i">@i</a>
+                    </li>
+                }
+                <li class="page-item @(Model.Threads.HasNextPage ? "" : "disabled")">
+                    <a class="page-link" asp-route-id="@Model.Forum.ForumId" asp-route-page="@(Model.Threads.PageIndex + 1)">Next</a>
+                </li>
+            </ul>
+        </nav>
+    }
 </div>

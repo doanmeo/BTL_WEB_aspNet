@@ -1,4 +1,4 @@
-@model IEnumerable<BlogWebsite.Models.Forum>
+@model BlogWebsite.Models.ViewModels.PagedResult<BlogWebsite.Models.Forum>
 @{
     Layout = "~/Areas/Admin/Views/Shared/MyAdminLayout.cshtml";
     ViewData["Title"] = "Quản lý diễn đàn";
@@ -10,11 +10,16 @@
         <h2 class="text-galaxy">Quản lý diễn đàn</h2>
         <p>Giữ vững chất lượng nội dung trên từng “hành tinh” thảo luận.</p>
     </div>
-    <div class="floating-orb small"></div>
+    <div class="d-flex gap-2">
+        <a asp-action="Create" class="btn btn-gradient">
+            <i class="mdi mdi-plus-circle-outline me-1"></i> Thêm diễn đàn
+        </a>
+        <div class="floating-orb small"></div>
+    </div>
 </div>
 
 <div class="row g-3">
-    @foreach (var forum in Model)
+@foreach (var forum in Model.Items)
     {
         <div class="col-md-6 col-xl-4">
             <div class="galaxy-card floating fast">
@@ -25,12 +30,36 @@
                     <span><i class="mdi mdi-tag"></i> @forum.Category?.Name</span>
                     <span><i class="mdi mdi-account"></i> @forum.AppUser?.UserName</span>
                 </div>
-                <div class="d-flex justify-content-between mt-3">
+                <div class="d-flex justify-content-between align-items-center mt-3">
                     <span class="status-chip">Threads: @forum.Threads?.Count</span>
-                    <a asp-area="Admin" asp-controller="Categories" asp-action="Edit" asp-route-id="@forum.CategoryId" class="link-galaxy">Quản lý Category</a>
+                    <div class="d-flex gap-2">
+                        <a asp-action="Details" asp-route-id="@forum.ForumId" class="btn-icon" title="Xem"><i class="mdi mdi-eye-outline"></i></a>
+                        <a asp-action="Edit" asp-route-id="@forum.ForumId" class="btn-icon" title="Sửa"><i class="mdi mdi-pencil-outline"></i></a>
+                        <a asp-action="Delete" asp-route-id="@forum.ForumId" class="btn-icon danger" title="Xóa"><i class="mdi mdi-delete-outline"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     }
 </div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Forums pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex - 1)">Trước</a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(Model.PageIndex + 1)">Sau</a>
+            </li>
+        </ul>
+    </nav>
+}
 
